@@ -5,6 +5,8 @@ class Paths {
     public static inline var TILESET = "assets/data/tilesets/";
     public static inline var TILESHEET = "assets/images/tilesheets/";
 
+    public static inline var CURSOR = "assets/images/display/cursor.png";
+
     public static inline var MAP = "map.json";
 
 }
