@@ -19,7 +19,7 @@ class FeTilesetTest extends Test {
         idles = [ [ [0], [1] ], [ [2] ] ];
 
         tileset = new FeTileset(names, idles);
-        tilesheet = FlxGraphic.fromBitmapData(Assets.getBitmapData("assets/images/tilesheets/dev.png"));
+        tilesheet = FlxGraphic.fromBitmapData(Assets.getBitmapData(Test.TILESET_PATH));
     }
 
     public function testGetForestTile() {

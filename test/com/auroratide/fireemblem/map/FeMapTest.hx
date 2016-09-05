@@ -1,7 +1,5 @@
 package com.auroratide.fireemblem.map;
 
-import flixel.FlxSprite;
-
 import mockatoo.Mockatoo.*;
 using mockatoo.Mockatoo;
 
