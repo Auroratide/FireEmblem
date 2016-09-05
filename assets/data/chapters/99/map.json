@@ -1,8 +1,8 @@
 {
-  "width": 1,
-  "height": 1,
-  "tileset": "assets/data/tilesets/dev.json",
-  "tilesheet": "assets/images/tilesheets/dev.png",
+  "rows": 1,
+  "cols": 1,
+  "tileset": "dev",
+  "tilesheet": "dev",
   "tiles": [0],
   "idles": [0]
 }

@@ -1,5 +1,7 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.loader.TilesheetLoader;
+import com.auroratide.fireemblem.loader.TilesetLoader;
 import flixel.FlxSprite;
 import flixel.FlxState;
 
@@ -18,7 +20,7 @@ class PlayState extends FlxState {
     override public function create():Void {
         super.create();
 
-        var map = new MapLoader(99).load();
+        var map = new MapLoader(3, new TilesetLoader(""), new TilesheetLoader("")).load();
 
         add(map);
 

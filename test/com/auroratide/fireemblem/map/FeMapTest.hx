@@ -1,4 +1,4 @@
-package com.auroratide.fireemblem;
+package com.auroratide.fireemblem.map;
 
 import flixel.FlxSprite;
 
@@ -8,9 +8,9 @@ using mockatoo.Mockatoo;
 class FeMapTest extends Test {
 
     public function testCreate() {
-        var tile01 = new FlxSprite();
-        var tile02 = new FlxSprite();
-        var tiles = new Array<FlxSprite>();
+        var tile01 = new FeTile();
+        var tile02 = new FeTile();
+        var tiles = new Array<FeTile>();
         tiles.push(tile01);
         tiles.push(tile02);
         var map = FeMap.create(1, 2, tiles);
@@ -20,6 +20,8 @@ class FeMapTest extends Test {
         assertEquals(2, map.length);
         assertEquals(tile01, map.members[0]);
         assertEquals(tile02, map.members[1]);
+        assertEquals(0, tile01.x);
+        assertEquals(Constants.TILE_PIXEL_WIDTH, tile02.x);
     }
 
 }

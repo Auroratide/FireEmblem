@@ -1,5 +1,13 @@
 [ {
   "name": "grass",
-  "idles": [ [0] ],
-  "anims": []
+  "idles": [ [0] ]
+}, {
+  "name": "log",
+  "idles": [ [1] ]
+}, {
+  "name": "sand",
+  "idles": [ [1], [2] ]
+}, {
+  "name": "water",
+  "idles": [ [3] ]
 } ]

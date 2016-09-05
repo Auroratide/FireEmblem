@@ -3,7 +3,7 @@ package;
 import haxe.unit.TestCase;
 import haxe.unit.TestRunner;
 
-import com.auroratide.fireemblem.FeMapTest;
+import com.auroratide.fireemblem.map.FeMapTest;
 import com.auroratide.fireemblem.loader.MapLoaderTest;
 
 class TestDriver {

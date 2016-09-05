@@ -1,11 +1,11 @@
-package com.auroratide.fireemblem;
+package com.auroratide.fireemblem.map;
 
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 
 import com.auroratide.fireemblem.util.Warning;
 
-class FeMap extends FlxTypedGroup<FlxSprite> {
+class FeMap extends FlxTypedGroup<FeTile> {
 
     public var rows(default, null):Int;
     public var cols(default, null):Int;
@@ -18,12 +18,12 @@ class FeMap extends FlxTypedGroup<FlxSprite> {
         this.cols = cols;
     }
 
-    public static function create(rows:Int, cols:Int, tiles:Iterable<FlxSprite>):FeMap {
+    public static function create(rows:Int, cols:Int, tiles:Iterable<FeTile>):FeMap {
         var map = new FeMap(rows, cols);
         var i = 0;
         for(tile in tiles) {
             tile.x = (i % cols) * Constants.TILE_PIXEL_WIDTH;
-            tile.y = Math.floor(i / rows) * Constants.TILE_PIXEL_HEIGHT;
+            tile.y = Math.floor(i / cols) * Constants.TILE_PIXEL_HEIGHT;
             map.add(tile);
             ++i;
         }
