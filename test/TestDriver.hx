@@ -30,6 +30,12 @@ class TestDriver {
         runner.add(tests.get(fullyQualifiedName));
     }
 
+    public function some(packageName:String):Void {
+        for(name in tests.keys())
+            if(name.indexOf(packageName) >= 0)
+                runner.add(tests.get(name));
+    }
+
     public function all():Void {
         for(test in tests)
             runner.add(test);
