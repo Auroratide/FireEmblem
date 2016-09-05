@@ -20,8 +20,8 @@ class FeMapTest extends Test {
         assertEquals(2, map.length);
         assertEquals(tile01, map.members[0]);
         assertEquals(tile02, map.members[1]);
-        assertEquals(0, tile01.x);
-        assertEquals(Constants.TILE_PIXEL_WIDTH, tile02.x);
+        assertEquals(0.0, tile01.x);
+        assertEquals(Constants.TILE_PIXEL_WIDTH * 1.0, tile02.x);
     }
 
 }

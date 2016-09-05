@@ -13,8 +13,6 @@ class FeTileset {
     public function get(tileIndex:Int, idle:Int, tilesheet:FeTilesheet):FeTile {
         var tile = new FeTile();
         tile.loadGraphic(tilesheet, true, Constants.TILE_PIXEL_WIDTH, Constants.TILE_PIXEL_HEIGHT);
-//        trace(idles[4].length);
-//        trace('Tile: $tileIndex, Idle: $idle');
         tile.animation.add("idle", idles[tileIndex][idle], Constants.ANIMATION_FRAMERATE, false);
         tile.animation.play("idle");
         return tile;

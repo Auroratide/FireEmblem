@@ -1,9 +1,10 @@
 package;
 
+import com.auroratide.fireemblem.map.FeTilesetTest;
 import haxe.unit.TestCase;
 import haxe.unit.TestRunner;
 
-import com.auroratide.fireemblem.map.FeMapTest;
+import com.auroratide.fireemblem.map.*;
 import com.auroratide.fireemblem.loader.MapLoaderTest;
 
 class TestDriver {
@@ -20,7 +21,10 @@ class TestDriver {
     public function new() {
         runner = new TestRunner();
         tests = new Map<String, TestCase>();
+
         register(new FeMapTest());
+        register(new FeTilesetTest());
+
         register(new MapLoaderTest());
     }
 

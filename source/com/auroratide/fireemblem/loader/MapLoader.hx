@@ -1,11 +1,9 @@
 package com.auroratide.fireemblem.loader;
 
-import com.auroratide.fireemblem.map.FeTile;
-import com.auroratide.fireemblem.map.FeTilesheet;
-import flixel.FlxSprite;
-
 import com.auroratide.fireemblem.map.FeMap;
+import com.auroratide.fireemblem.map.FeTile;
 import com.auroratide.fireemblem.map.FeTileset;
+import com.auroratide.fireemblem.map.FeTilesheet;
 import com.auroratide.fireemblem.error.ParserError;
 
 class MapLoader extends JsonLoader<FeMap> {
