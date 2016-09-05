@@ -4,6 +4,7 @@ import haxe.unit.TestCase;
 import haxe.unit.TestRunner;
 
 import com.auroratide.fireemblem.FeMapTest;
+import com.auroratide.fireemblem.loader.MapLoaderTest;
 
 class TestDriver {
 
@@ -20,6 +21,7 @@ class TestDriver {
         runner = new TestRunner();
         tests = new Map<String, TestCase>();
         register(new FeMapTest());
+        register(new MapLoaderTest());
     }
 
     public function register(test:TestCase):Void {

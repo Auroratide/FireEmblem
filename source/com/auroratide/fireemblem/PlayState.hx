@@ -3,6 +3,8 @@ package com.auroratide.fireemblem;
 import flixel.FlxSprite;
 import flixel.FlxState;
 
+import com.auroratide.fireemblem.loader.MapLoader;
+
 class PlayState extends FlxState {
 
 /*  Constructor
@@ -16,13 +18,7 @@ class PlayState extends FlxState {
     override public function create():Void {
         super.create();
 
-        var tile = new FlxSprite()
-            .loadGraphic("assets/images/tilesheets/dev.png", true, Constants.TILE_PIXEL_WIDTH, Constants.TILE_PIXEL_HEIGHT);
-
-        var tiles = new Array<FlxSprite>();
-        tiles.push(tile);
-
-        var map = FeMap.create(1, 1, tiles);
+        var map = new MapLoader(99).load();
 
         add(map);
 
