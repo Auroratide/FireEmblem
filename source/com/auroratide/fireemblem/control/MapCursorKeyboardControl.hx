@@ -18,9 +18,14 @@ class MapCursorKeyboardControl extends FlxBasic {
     override public function update(elapsed:Float):Void {
         super.update(elapsed);
 
-        if(FlxG.keys.anyJustPressed(keybinds.right)) {
+        if(FlxG.keys.anyJustPressed(keybinds.up))
+            cursor.up();
+        if(FlxG.keys.anyJustPressed(keybinds.right))
             cursor.right();
-        }
+        if(FlxG.keys.anyJustPressed(keybinds.down))
+            cursor.down();
+        if(FlxG.keys.anyJustPressed(keybinds.left))
+            cursor.left();
     }
 
 /*  Private Members

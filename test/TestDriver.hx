@@ -24,6 +24,7 @@ class TestDriver {
 
         register(new FeMapTest());
         register(new FeTilesetTest());
+        register(new MapCursorTest());
 
         register(new MapLoaderTest());
     }

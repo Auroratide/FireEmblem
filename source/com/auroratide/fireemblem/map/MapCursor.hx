@@ -16,7 +16,7 @@ class MapCursor extends FlxSprite {
 /*  Public Methods
  *  =========================================================================*/
     public function up():Void {
-
+        y -= Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function right():Void {
@@ -24,11 +24,11 @@ class MapCursor extends FlxSprite {
     }
 
     public function down():Void {
-
+        y += Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function left():Void {
-
+        x -= Constants.TILE_PIXEL_WIDTH;
     }
 
 /*  Private Members
