@@ -13,6 +13,24 @@ class MapCursor extends FlxSprite {
         initGraphic();
     }
 
+/*  Public Methods
+ *  =========================================================================*/
+    public function up():Void {
+
+    }
+
+    public function right():Void {
+        x += Constants.TILE_PIXEL_WIDTH;
+    }
+
+    public function down():Void {
+
+    }
+
+    public function left():Void {
+
+    }
+
 /*  Private Members
  *  =========================================================================*/
     private var map:FeMap;
