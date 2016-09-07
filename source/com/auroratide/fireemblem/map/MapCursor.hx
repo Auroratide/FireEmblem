@@ -13,6 +13,13 @@ class MapCursor extends FlxSprite {
         initGraphic();
     }
 
+/*  Flixel API
+ *  =========================================================================*/
+    override public function setPosition(x:Float = 0, y:Float = 0):Void {
+        this.x = Math.floor(x / Constants.TILE_PIXEL_WIDTH) * Constants.TILE_PIXEL_WIDTH;
+        this.y = Math.floor(y / Constants.TILE_PIXEL_HEIGHT) * Constants.TILE_PIXEL_HEIGHT;
+    }
+
 /*  Public Methods
  *  =========================================================================*/
     public function up():Void {

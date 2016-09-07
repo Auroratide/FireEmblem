@@ -1,11 +1,13 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.control.MouseToggleControl;
+import com.auroratide.fireemblem.control.MapCursorMouseControl;
 import com.auroratide.fireemblem.control.MapCursorKeyboardControl;
 import com.auroratide.fireemblem.config.Keybinds;
 import com.auroratide.fireemblem.map.MapCursor;
 import com.auroratide.fireemblem.loader.TilesheetLoader;
 import com.auroratide.fireemblem.loader.TilesetLoader;
-import flixel.FlxSprite;
+import flixel.FlxG;
 import flixel.FlxState;
 
 import com.auroratide.fireemblem.loader.MapLoader;
@@ -28,11 +30,16 @@ class PlayState extends FlxState {
         var map = new MapLoader(3, new TilesetLoader(""), new TilesheetLoader("")).load();
         var cursor = new MapCursor(map);
 
-        var cursorMovement = new MapCursorKeyboardControl(keybinds, cursor);
+        var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor);
+        var cursorMovement = new MapCursorKeyboardControl(FlxG.keys, keybinds, cursor);
+
+        var mouseToggle = new MouseToggleControl(FlxG.keys, FlxG.mouse, keybinds, [mouseMovement]);
 
         add(map);
         add(cursor);
+        add(mouseMovement);
         add(cursorMovement);
+        add(mouseToggle);
     }
 
     override public function update(elapsed:Float):Void {
