@@ -10,6 +10,9 @@ class Keyboard implements GameInput {
     public var right(get, never):IFlxInput;
     public var down(get, never):IFlxInput;
     public var left(get, never):IFlxInput;
+    public var select(get, never):IFlxInput;
+    public var cancel(get, never):IFlxInput;
+    public var start(get, never):IFlxInput;
 
     public var directions(get, never):IFlxInput;
     public var any(get, never):IFlxInput;
@@ -19,6 +22,9 @@ class Keyboard implements GameInput {
         right_ = new KeyboardInput(flxKeyboard, keybinds.right);
         down_ = new KeyboardInput(flxKeyboard, keybinds.down);
         left_ = new KeyboardInput(flxKeyboard, keybinds.left);
+        select_ = new KeyboardInput(flxKeyboard, keybinds.select);
+        cancel_ = new KeyboardInput(flxKeyboard, keybinds.cancel);
+        start_ = new KeyboardInput(flxKeyboard, keybinds.start);
 
         directions_ = new KeyboardInput(flxKeyboard,
             keybinds.up
@@ -32,6 +38,9 @@ class Keyboard implements GameInput {
               .concat(keybinds.right)
               .concat(keybinds.down)
               .concat(keybinds.left)
+              .concat(keybinds.select)
+              .concat(keybinds.cancel)
+              .concat(keybinds.start)
         );
     }
 
@@ -39,6 +48,9 @@ class Keyboard implements GameInput {
     private var right_:IFlxInput;
     private var down_:IFlxInput;
     private var left_:IFlxInput;
+    private var select_:IFlxInput;
+    private var cancel_:IFlxInput;
+    private var start_:IFlxInput;
 
     private var directions_:IFlxInput;
     private var any_:IFlxInput;
@@ -51,6 +63,13 @@ class Keyboard implements GameInput {
         return down_;
     private function get_left():IFlxInput
         return left_;
+    public function get_select():IFlxInput
+        return select_;
+    public function get_cancel():IFlxInput
+        return cancel_;
+    public function get_start():IFlxInput
+        return start_;
+
     private function get_directions():IFlxInput
         return directions_;
     private function get_any():IFlxInput

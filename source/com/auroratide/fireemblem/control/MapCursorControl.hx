@@ -47,13 +47,17 @@ class MapCursorControl extends FlxBasic {
     }
 
     private inline function canMove():Bool {
-        return holdCounter == 0 || (holdCounter > DELAY_HOLD && holdCounter % DELAY_REPEAT == 0);
+        return input.cancel.pressed ||
+               holdCounter == 0     ||
+               (holdCounter > DELAY_HOLD && holdCounter % DELAY_REPEAT == 0);
     }
 
     private inline function updateHoldCounter():Void {
         if(input.directions.pressed)
             ++holdCounter;
-        if(input.directions.released)
+        if(input.directions.released && input.cancel.released)
             holdCounter = 0;
+        if(input.cancel.justPressed)
+            holdCounter = DELAY_HOLD + (holdCounter % DELAY_REPEAT); // the last bit ensures a smoother transition
     }
 }
