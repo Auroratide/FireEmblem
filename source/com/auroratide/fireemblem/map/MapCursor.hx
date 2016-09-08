@@ -2,8 +2,12 @@ package com.auroratide.fireemblem.map;
 
 import flixel.math.FlxPoint;
 import flixel.FlxSprite;
+import flixel.math.FlxMath;
 
 class MapCursor extends FlxSprite {
+
+    public var row(get, never):Int;
+    public var col(get, never):Int;
 
 /*  Constructor
  *  =========================================================================*/
@@ -16,26 +20,34 @@ class MapCursor extends FlxSprite {
 /*  Flixel API
  *  =========================================================================*/
     override public function setPosition(x:Float = 0, y:Float = 0):Void {
-        this.x = Math.floor(x / Constants.TILE_PIXEL_WIDTH) * Constants.TILE_PIXEL_WIDTH;
-        this.y = Math.floor(y / Constants.TILE_PIXEL_HEIGHT) * Constants.TILE_PIXEL_HEIGHT;
+        this.x = FlxMath.bound(
+            Math.floor(x / Constants.TILE_PIXEL_WIDTH) * Constants.TILE_PIXEL_WIDTH,
+            0,
+            (map.cols - 1) * Constants.TILE_PIXEL_WIDTH
+        );
+        this.y = FlxMath.bound(
+            Math.floor(y / Constants.TILE_PIXEL_HEIGHT) * Constants.TILE_PIXEL_HEIGHT,
+            0,
+            (map.rows - 1) * Constants.TILE_PIXEL_HEIGHT
+        );
     }
 
 /*  Public Methods
  *  =========================================================================*/
     public function up():Void {
-        y -= Constants.TILE_PIXEL_HEIGHT;
+        if(row > 0) y -= Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function right():Void {
-        x += Constants.TILE_PIXEL_WIDTH;
+        if(col < map.cols - 1) x += Constants.TILE_PIXEL_WIDTH;
     }
 
     public function down():Void {
-        y += Constants.TILE_PIXEL_HEIGHT;
+        if(row < map.rows - 1) y += Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function left():Void {
-        x -= Constants.TILE_PIXEL_WIDTH;
+        if(col > 0) x -= Constants.TILE_PIXEL_WIDTH;
     }
 
 /*  Private Members
@@ -53,5 +65,13 @@ class MapCursor extends FlxSprite {
         loadGraphic(Paths.CURSOR, true, Constants.CURSOR_PIXEL_WIDTH, Constants.CURSOR_PIXEL_HEIGHT);
         animation.add("idle", [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2]);
         animation.play("idle");
+    }
+
+    private function get_row():Int {
+        return Math.floor(y / Constants.TILE_PIXEL_HEIGHT);
+    }
+
+    private function get_col():Int {
+        return Math.floor(x / Constants.TILE_PIXEL_WIDTH);
     }
 }
