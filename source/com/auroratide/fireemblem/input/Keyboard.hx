@@ -4,36 +4,57 @@ import flixel.input.keyboard.FlxKeyboard;
 import flixel.input.IFlxInput;
 import com.auroratide.fireemblem.config.Keybinds;
 
-class Keyboard {
+class Keyboard implements GameInput {
 
-    public var up(default, null):IFlxInput;
-    public var right(default, null):IFlxInput;
-    public var down(default, null):IFlxInput;
-    public var left(default, null):IFlxInput;
+    public var up(get, never):IFlxInput;
+    public var right(get, never):IFlxInput;
+    public var down(get, never):IFlxInput;
+    public var left(get, never):IFlxInput;
 
-    public var directions(default, null):IFlxInput;
-    public var any(default, null):IFlxInput;
+    public var directions(get, never):IFlxInput;
+    public var any(get, never):IFlxInput;
 
     public function new(flxKeyboard:FlxKeyboard, keybinds:Keybinds) {
-        up = new KeyboardInput(flxKeyboard, keybinds.up);
-        right = new KeyboardInput(flxKeyboard, keybinds.right);
-        down = new KeyboardInput(flxKeyboard, keybinds.down);
-        left = new KeyboardInput(flxKeyboard, keybinds.left);
+        up_ = new KeyboardInput(flxKeyboard, keybinds.up);
+        right_ = new KeyboardInput(flxKeyboard, keybinds.right);
+        down_ = new KeyboardInput(flxKeyboard, keybinds.down);
+        left_ = new KeyboardInput(flxKeyboard, keybinds.left);
 
-        directions = new KeyboardInput(flxKeyboard,
+        directions_ = new KeyboardInput(flxKeyboard,
             keybinds.up
               .concat(keybinds.right)
               .concat(keybinds.down)
               .concat(keybinds.left)
         );
 
-        any = new KeyboardInput(flxKeyboard,
+        any_ = new KeyboardInput(flxKeyboard,
             keybinds.up
               .concat(keybinds.right)
               .concat(keybinds.down)
               .concat(keybinds.left)
         );
     }
+
+    private var up_:IFlxInput;
+    private var right_:IFlxInput;
+    private var down_:IFlxInput;
+    private var left_:IFlxInput;
+
+    private var directions_:IFlxInput;
+    private var any_:IFlxInput;
+
+    private function get_up()
+        return up_;
+    private function get_right()
+        return right_;
+    private function get_down()
+        return down_;
+    private function get_left()
+        return left_;
+    private function get_directions()
+        return directions_;
+    private function get_any()
+        return any_;
 
 }
 
