@@ -43,17 +43,17 @@ class Keyboard implements GameInput {
     private var directions_:IFlxInput;
     private var any_:IFlxInput;
 
-    private function get_up()
+    private function get_up():IFlxInput
         return up_;
-    private function get_right()
+    private function get_right():IFlxInput
         return right_;
-    private function get_down()
+    private function get_down():IFlxInput
         return down_;
-    private function get_left()
+    private function get_left():IFlxInput
         return left_;
-    private function get_directions()
+    private function get_directions():IFlxInput
         return directions_;
-    private function get_any()
+    private function get_any():IFlxInput
         return any_;
 
 }
