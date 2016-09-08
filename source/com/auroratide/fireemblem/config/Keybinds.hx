@@ -9,17 +9,11 @@ class Keybinds {
     public var down(default, null):Array<Int>;
     public var left(default, null):Array<Int>;
 
-    public var directions(default, null):Array<Int>;
-    public var all(default, null):Array<Int>;
-
     public function new() {
         up    = [FlxKey.UP];
         right = [FlxKey.RIGHT];
         down  = [FlxKey.DOWN];
         left  = [FlxKey.LEFT];
-
-        directions = up.concat(right).concat(down).concat(left);
-        all = directions.copy();
     }
 
 }

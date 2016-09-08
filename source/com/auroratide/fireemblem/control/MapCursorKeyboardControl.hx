@@ -3,14 +3,14 @@ package com.auroratide.fireemblem.control;
 import flixel.FlxBasic;
 import flixel.input.keyboard.FlxKeyboard;
 import com.auroratide.fireemblem.config.Keybinds;
+import com.auroratide.fireemblem.input.Keyboard;
 import com.auroratide.fireemblem.map.MapCursor;
 
 class MapCursorKeyboardControl extends FlxBasic {
 
-    public function new(keyboard:FlxKeyboard, keybinds:Keybinds, cursor:MapCursor) {
+    public function new(keyboard:Keyboard, cursor:MapCursor) {
         super();
         this.keyboard = keyboard;
-        this.keybinds = keybinds;
         this.cursor = cursor;
     }
 
@@ -19,19 +19,18 @@ class MapCursorKeyboardControl extends FlxBasic {
     override public function update(elapsed:Float):Void {
         super.update(elapsed);
 
-        if(keyboard.anyJustPressed(keybinds.up))
+        if(keyboard.up.justPressed)
             cursor.up();
-        if(keyboard.anyJustPressed(keybinds.right))
+        if(keyboard.right.justPressed)
             cursor.right();
-        if(keyboard.anyJustPressed(keybinds.down))
+        if(keyboard.down.justPressed)
             cursor.down();
-        if(keyboard.anyJustPressed(keybinds.left))
+        if(keyboard.left.justPressed)
             cursor.left();
     }
 
 /*  Private Members
  *  =========================================================================*/
-    private var keyboard:FlxKeyboard;
-    private var keybinds:Keybinds;
+    private var keyboard:Keyboard;
     private var cursor:MapCursor;
 }

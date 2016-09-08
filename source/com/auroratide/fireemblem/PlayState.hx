@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.input.Keyboard;
 import com.auroratide.fireemblem.control.MouseToggleControl;
 import com.auroratide.fireemblem.control.MapCursorMouseControl;
 import com.auroratide.fireemblem.control.MapCursorKeyboardControl;
@@ -26,14 +27,15 @@ class PlayState extends FlxState {
         super.create();
 
         var keybinds = new Keybinds();
+        var keyboard = new Keyboard(FlxG.keys, keybinds);
 
         var map = new MapLoader(3, new TilesetLoader(""), new TilesheetLoader("")).load();
         var cursor = new MapCursor(map);
 
         var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor);
-        var cursorMovement = new MapCursorKeyboardControl(FlxG.keys, keybinds, cursor);
+        var cursorMovement = new MapCursorKeyboardControl(keyboard, cursor);
 
-        var mouseToggle = new MouseToggleControl(FlxG.keys, FlxG.mouse, keybinds, [mouseMovement]);
+        var mouseToggle = new MouseToggleControl(keyboard, FlxG.mouse, [mouseMovement]);
 
         add(map);
         add(cursor);
