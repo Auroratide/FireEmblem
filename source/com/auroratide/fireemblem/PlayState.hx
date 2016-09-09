@@ -29,7 +29,7 @@ class PlayState extends FlxState {
         var keybinds = new Keybinds();
         var keyboard = new Keyboard(FlxG.keys, keybinds);
 
-        var map = new MapLoader(3, new TilesetLoader(""), new TilesheetLoader("")).load();
+        var map = new MapLoader(6, new TilesetLoader(""), new TilesheetLoader("")).load();
         var cursor = new MapCursor(map);
 
         var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor);
@@ -42,6 +42,9 @@ class PlayState extends FlxState {
         add(mouseMovement);
         add(cursorMovement);
         add(mouseToggle);
+
+        FlxG.camera.follow(cursor);
+        FlxG.camera.setScrollBoundsRect(0, 0, map.cols * Constants.TILE_PIXEL_WIDTH, map.rows * Constants.TILE_PIXEL_HEIGHT);
     }
 
     override public function update(elapsed:Float):Void {
