@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem.control;
 
+import flixel.input.IFlxInput;
 import flixel.FlxBasic;
 import com.auroratide.fireemblem.input.GameInput;
 import com.auroratide.fireemblem.map.MapCursor;
@@ -31,6 +32,7 @@ class MapCursorControl extends FlxBasic {
  *  =========================================================================*/
     private var input:GameInput;
     private var cursor:MapCursor;
+
     private var holdCounter:Int;
 
 /*  Private Methods
@@ -47,7 +49,8 @@ class MapCursorControl extends FlxBasic {
     }
 
     private inline function canMove():Bool {
-        return input.cancel.pressed ||
+        return input.directions.justPressed ||
+               input.cancel.pressed ||
                holdCounter == 0     ||
                (holdCounter > DELAY_HOLD && holdCounter % DELAY_REPEAT == 0);
     }
@@ -60,4 +63,5 @@ class MapCursorControl extends FlxBasic {
         if(input.cancel.justPressed)
             holdCounter = DELAY_HOLD + (holdCounter % DELAY_REPEAT); // the last bit ensures a smoother transition
     }
+
 }
