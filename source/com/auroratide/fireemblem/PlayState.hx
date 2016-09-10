@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.map.MapCamera;
 import com.auroratide.fireemblem.input.Keyboard;
 import com.auroratide.fireemblem.control.MouseToggleControl;
 import com.auroratide.fireemblem.control.MapCursorMouseControl;
@@ -32,7 +33,10 @@ class PlayState extends FlxState {
         var map = new MapLoader(6, new TilesetLoader(""), new TilesheetLoader("")).load();
         var cursor = new MapCursor(map);
 
-        var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor);
+        var camera = new MapCamera(map, cursor);
+        FlxG.cameras.add(camera);
+
+        var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor, camera);
         var cursorMovement = new MapCursorControl(keyboard, cursor);
 
         var mouseToggle = new MouseToggleControl(keyboard, FlxG.mouse, [mouseMovement]);
@@ -42,9 +46,6 @@ class PlayState extends FlxState {
         add(mouseMovement);
         add(cursorMovement);
         add(mouseToggle);
-
-        FlxG.camera.follow(cursor);
-        FlxG.camera.setScrollBoundsRect(0, 0, map.cols * Constants.TILE_PIXEL_WIDTH, map.rows * Constants.TILE_PIXEL_HEIGHT);
     }
 
     override public function update(elapsed:Float):Void {

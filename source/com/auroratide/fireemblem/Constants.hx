@@ -12,6 +12,7 @@ class Constants {
 
 /*  Misc
  *  =========================================================================*/
+    public static inline var CAMERA_SENSITIVITY = 0.15;
     public static inline var ANIMATION_FRAMERATE = 30;
 
 }
