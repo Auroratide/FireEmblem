@@ -6,7 +6,7 @@ import com.auroratide.fireemblem.map.MapCursor;
 
 class MapCursorControl extends FlxBasic {
 
-    private static inline var DELAY_HOLD = 18;
+    private static inline var DELAY_HOLD = 10;
     private static inline var DELAY_REPEAT = 3;
 
     public function new(input:GameInput, cursor:MapCursor) {
