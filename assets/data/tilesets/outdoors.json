@@ -1,8 +1,8 @@
 [ {
-  "name": "grass",
+  "name": "Grass",
   "idle": [ [65] ]
 }, {
-  "name": "path",
+  "name": "Path",
   "idle": [
     [400],
     [401], [402], [434], [433],
@@ -10,31 +10,31 @@
     [269], [270], [272], [304]
   ]
 }, {
-  "name": "thicket",
+  "name": "Thicket",
   "idle": [ [719] ]
 }, {
-  "name": "forest",
+  "name": "Forest",
   "idle": [ [720] ]
 }, {
-  "name": "mountain",
+  "name": "Mountain",
   "idle": [ [678], [591], [527] ]
 }, {
-  "name": "sand",
+  "name": "Sand",
   "idle": [ [315],
             [282] ]
 }, {
-  "name": "water",
+  "name": "Water",
   "idle": [ [275, 276] ]
 }, {
-  "name": "bridge",
+  "name": "Bridge",
   "idle": [ [33] ]
 }, {
-  "name": "rail",
+  "name": "Rail",
   "idle": [ [1] ]
 }, {
-  "name": "hill",
+  "name": "Hill",
   "idle": [ [684] ]
 }, {
-  "name": "log",
+  "name": "Logs",
   "idle": [ [7] ]
 } ]
