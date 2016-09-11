@@ -32,4 +32,10 @@ class FeMap extends FlxTypedGroup<FeTile> {
         return map;
     }
 
+/*  Public Methods
+ *  =========================================================================*/
+    public function tile(row:Int, col:Int):FeTile {
+        return members[col + cols * row];
+    }
+
 }

@@ -10,4 +10,6 @@ class Paths {
 
     public static inline var MAP = "map.json";
 
+    public static inline var STANDARD_FONT = "assets/fonts/CandelaBook.otf";
+
 }

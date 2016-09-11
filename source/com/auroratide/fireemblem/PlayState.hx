@@ -40,7 +40,7 @@ class PlayState extends FlxState {
         FlxG.cameras.add(camera);
 
         var hud = new Hud(Constants.MAP_HUD_PADDING, Constants.MAP_HUD_PADDING, FlxG.width - 2 * Constants.MAP_HUD_PADDING, FlxG.height - 2 * Constants.MAP_HUD_PADDING);
-        var tileScreen = new TileInfoScreen(hud, cursor, camera);
+        var tileScreen = new TileInfoScreen(hud, map, cursor, camera);
         hud.add(tileScreen);
 
         var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor, camera);
