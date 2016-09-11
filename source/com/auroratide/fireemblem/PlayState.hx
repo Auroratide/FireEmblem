@@ -1,5 +1,7 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.hud.Hud;
+import com.auroratide.fireemblem.map.hud.TileInfoScreen;
 import com.auroratide.fireemblem.map.MapCamera;
 import com.auroratide.fireemblem.input.Keyboard;
 import com.auroratide.fireemblem.control.MouseToggleControl;
@@ -36,6 +38,10 @@ class PlayState extends FlxState {
         var camera = new MapCamera(map, cursor);
         FlxG.cameras.add(camera);
 
+        var hud = new Hud(Constants.MAP_HUD_PADDING, Constants.MAP_HUD_PADDING, FlxG.width - 2 * Constants.MAP_HUD_PADDING, FlxG.height - 2 * Constants.MAP_HUD_PADDING);
+        var tileScreen = new TileInfoScreen(hud, cursor, camera);
+        hud.add(tileScreen);
+
         var mouseMovement = new MapCursorMouseControl(FlxG.mouse, cursor, camera);
         var cursorMovement = new MapCursorControl(keyboard, cursor);
 
@@ -43,6 +49,7 @@ class PlayState extends FlxState {
 
         add(map);
         add(cursor);
+        add(hud);
         add(mouseMovement);
         add(cursorMovement);
         add(mouseToggle);

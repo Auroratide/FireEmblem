@@ -10,6 +10,8 @@ class Constants {
     public static inline var CURSOR_PIXEL_WIDTH = 64;
     public static inline var CURSOR_PIXEL_HEIGHT = 64;
 
+    public static inline var MAP_HUD_PADDING = 20;
+
 /*  Misc
  *  =========================================================================*/
     public static inline var CAMERA_SENSITIVITY = 0.15;
