@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.map.tile.HillTile;
 import com.auroratide.fireemblem.hud.Hud;
 import com.auroratide.fireemblem.map.hud.TileInfoScreen;
 import com.auroratide.fireemblem.map.MapCamera;

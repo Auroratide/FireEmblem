@@ -11,7 +11,7 @@ class FeTileset {
     }
 
     public function get(tileIndex:Int, idle:Int, tilesheet:FeTilesheet):FeTile {
-        var tile = new FeTile();
+        var tile = FeTile.create(names[tileIndex]);
         tile.loadGraphic(tilesheet, true, Constants.TILE_PIXEL_WIDTH, Constants.TILE_PIXEL_HEIGHT);
 
         var shouldLoop = idles[tileIndex][idle].length > 1;
