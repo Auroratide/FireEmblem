@@ -23,6 +23,8 @@ class TileInfoScreen extends HudElement {
     private var avoidText:Text;
     private var hitText:Text;
 
+    private var tile:FeTile;
+
     public function new(hud:Hud, map:FeMap, cursor:MapCursor, camera:FlxCamera) {
         super(hud);
         this.map = map;
@@ -43,12 +45,7 @@ class TileInfoScreen extends HudElement {
     override public function update(elapsed:Float):Void {
         super.update(elapsed);
         updateAlignment();
-
-        var tile = map.tile(cursor.row, cursor.col);
-        nameText.text = tile.name();
-        defText.text = Std.string(tile.def());
-        avoidText.text = Std.string(tile.avoid());
-        hitText.text = Std.string(tile.hit());
+        updateTileInformation();
     }
 
     private function updateAlignment():Void {
@@ -57,6 +54,17 @@ class TileInfoScreen extends HudElement {
             align(Southwest);
         else
             align(Southeast);
+    }
+
+    private function updateTileInformation():Void {
+        tile = map.tile(cursor.row, cursor.col);
+        if(nameText.text != tile.name()) {
+        //  Only update if the tile changed
+            nameText.text = tile.name();
+            defText.text = Std.string(tile.def());
+            avoidText.text = Std.string(tile.avoid());
+            hitText.text = Std.string(tile.hit());
+        }
     }
 
     private function initBackground():Void {
