@@ -12,9 +12,12 @@ class Constants {
 
     public static inline var MAP_HUD_PADDING = 20;
 
+/*  Animation
+ *  =========================================================================*/
+    public static inline var TILE_IDLE_FRAMERATE = 2;
+
 /*  Misc
  *  =========================================================================*/
     public static inline var CAMERA_SENSITIVITY = 0.15;
-    public static inline var ANIMATION_FRAMERATE = 30;
 
 }

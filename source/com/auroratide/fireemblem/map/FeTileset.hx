@@ -15,7 +15,7 @@ class FeTileset {
         tile.loadGraphic(tilesheet, true, Constants.TILE_PIXEL_WIDTH, Constants.TILE_PIXEL_HEIGHT);
 
         var shouldLoop = idles[tileIndex][idle].length > 1;
-        tile.animation.add("idle", idles[tileIndex][idle], Constants.ANIMATION_FRAMERATE, shouldLoop);
+        tile.animation.add("idle", idles[tileIndex][idle], Constants.TILE_IDLE_FRAMERATE, shouldLoop);
         tile.animation.play("idle");
         return tile;
     }
