@@ -23,12 +23,12 @@ class MapCursor extends FlxSprite {
         this.x = FlxMath.bound(
             Math.floor(x / Constants.TILE_PIXEL_WIDTH) * Constants.TILE_PIXEL_WIDTH,
             map.bounds.left,
-            map.bounds.right
+            map.bounds.right - Constants.TILE_PIXEL_WIDTH
         );
         this.y = FlxMath.bound(
             Math.floor(y / Constants.TILE_PIXEL_HEIGHT) * Constants.TILE_PIXEL_HEIGHT,
             map.bounds.top,
-            map.bounds.bottom
+            map.bounds.bottom - Constants.TILE_PIXEL_HEIGHT
         );
     }
 
@@ -39,11 +39,11 @@ class MapCursor extends FlxSprite {
     }
 
     public function right():Void {
-        if(x < map.bounds.right) x += Constants.TILE_PIXEL_WIDTH;
+        if(x < map.bounds.right - Constants.TILE_PIXEL_WIDTH) x += Constants.TILE_PIXEL_WIDTH;
     }
 
     public function down():Void {
-        if(y < map.bounds.bottom) y += Constants.TILE_PIXEL_HEIGHT;
+        if(y < map.bounds.bottom - Constants.TILE_PIXEL_HEIGHT) y += Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function left():Void {

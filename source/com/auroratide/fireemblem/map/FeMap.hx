@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem.map;
 
+import flixel.util.FlxColor;
 import flixel.FlxSprite;
 import flixel.math.FlxRect;
 import flixel.group.FlxGroup;
@@ -38,8 +39,8 @@ class FeMap extends FlxTypedGroup<FeTile> {
         map.bounds = FlxRect.get(
             colPadding * Constants.TILE_PIXEL_WIDTH,
             rowPadding * Constants.TILE_PIXEL_HEIGHT,
-            (cols - 2 * colPadding - 1) * Constants.TILE_PIXEL_WIDTH,
-            (rows - 2 * rowPadding - 1) * Constants.TILE_PIXEL_HEIGHT
+            (cols - 2 * colPadding) * Constants.TILE_PIXEL_WIDTH,
+            (rows - 2 * rowPadding) * Constants.TILE_PIXEL_HEIGHT
         );
 
         Warning.warn("Mismatch between rows * cols and number of tiles when creating an FeMap", i != rows * cols);
@@ -50,6 +51,32 @@ class FeMap extends FlxTypedGroup<FeTile> {
  *  =========================================================================*/
     public function tile(row:Int, col:Int):FeTile {
         return members[col + cols * row];
+    }
+
+    public function createBorder(thickness:Int, color:FlxColor):FlxGroup {
+        var top = new FlxSprite();
+        top.setPosition(bounds.left - thickness, bounds.top - thickness);
+        top.makeGraphic(Std.int(bounds.width), thickness, color);
+
+        var right = new FlxSprite();
+        right.setPosition(bounds.right, bounds.top - thickness);
+        right.makeGraphic(thickness, Std.int(bounds.height), color);
+
+        var bottom = new FlxSprite();
+        bottom.setPosition(bounds.left - thickness, bounds.bottom);
+        bottom.makeGraphic(Std.int(bounds.width), thickness, color);
+
+        var left = new FlxSprite();
+        left.setPosition(bounds.left - thickness, bounds.top - thickness);
+        left.makeGraphic(thickness, Std.int(bounds.height), color);
+
+        var border = new FlxGroup();
+        border.add(top);
+        border.add(right);
+        border.add(bottom);
+        border.add(left);
+
+        return border;
     }
 
 }
