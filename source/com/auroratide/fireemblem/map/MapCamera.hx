@@ -31,7 +31,8 @@ class MapCamera extends FlxCamera {
             maxDim, maxDim
         );
 
-        setScrollBoundsRect(0, 0,
+        setScrollBoundsRect(
+            0, 0,
             Math.max(FeMath.tilesWidth(map.cols), this.width),
             Math.max(FeMath.tilesHeight(map.rows), this.height)
         );

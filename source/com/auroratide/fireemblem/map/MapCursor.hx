@@ -22,32 +22,32 @@ class MapCursor extends FlxSprite {
     override public function setPosition(x:Float = 0, y:Float = 0):Void {
         this.x = FlxMath.bound(
             Math.floor(x / Constants.TILE_PIXEL_WIDTH) * Constants.TILE_PIXEL_WIDTH,
-            0,
-            (map.cols - 1) * Constants.TILE_PIXEL_WIDTH
+            map.bounds.left,
+            map.bounds.right
         );
         this.y = FlxMath.bound(
             Math.floor(y / Constants.TILE_PIXEL_HEIGHT) * Constants.TILE_PIXEL_HEIGHT,
-            0,
-            (map.rows - 1) * Constants.TILE_PIXEL_HEIGHT
+            map.bounds.top,
+            map.bounds.bottom
         );
     }
 
 /*  Public Methods
  *  =========================================================================*/
     public function up():Void {
-        if(row > 0) y -= Constants.TILE_PIXEL_HEIGHT;
+        if(y > map.bounds.top) y -= Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function right():Void {
-        if(col < map.cols - 1) x += Constants.TILE_PIXEL_WIDTH;
+        if(x < map.bounds.right) x += Constants.TILE_PIXEL_WIDTH;
     }
 
     public function down():Void {
-        if(row < map.rows - 1) y += Constants.TILE_PIXEL_HEIGHT;
+        if(y < map.bounds.bottom) y += Constants.TILE_PIXEL_HEIGHT;
     }
 
     public function left():Void {
-        if(col > 0) x -= Constants.TILE_PIXEL_WIDTH;
+        if(x > map.bounds.left) x -= Constants.TILE_PIXEL_WIDTH;
     }
 
 /*  Private Members

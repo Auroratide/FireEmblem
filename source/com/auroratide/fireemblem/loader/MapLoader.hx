@@ -33,7 +33,7 @@ class MapLoader extends JsonLoader<FeMap> {
         for(i in 0...numTiles)
             tiles.push(tileset.get(mapData.tiles[i], mapData.idles[i], tilesheet));
 
-        return FeMap.create(mapData.rows, mapData.cols, tiles);
+        return FeMap.create(mapData.rows, mapData.cols, mapData.rowPadding, mapData.colPadding, tiles);
     }
 
     private function validateDimensions(data:MapStructure):Void {
@@ -58,6 +58,8 @@ class MapLoader extends JsonLoader<FeMap> {
 private typedef MapStructure = {
     var rows:Int;
     var cols:Int;
+    var rowPadding:Int;
+    var colPadding:Int;
     var tileset:String;
     var tilesheet:String;
     var tiles:Array<Int>;
