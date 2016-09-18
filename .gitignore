@@ -3,3 +3,4 @@ export/
 *.iml
 *.hxproj
 .DS_Store
+release.sh
