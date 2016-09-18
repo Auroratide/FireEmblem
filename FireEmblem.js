@@ -37,8 +37,12 @@ ApplicationMain.create = function() {
 	types.push("TEXT");
 	urls.push("assets/data/tilesets/outdoors.json");
 	types.push("TEXT");
+	urls.push("assets/fonts/CandelaBook.eot");
+	types.push("BINARY");
 	urls.push("Candela Book");
 	types.push("FONT");
+	urls.push("assets/fonts/CandelaBook.woff");
+	types.push("BINARY");
 	urls.push("assets/images/display/cursor.png");
 	types.push("IMAGE");
 	urls.push("assets/images/display/tileinfo.png");
@@ -83,7 +87,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "321", company : "HaxeFlixel", file : "FireEmblem", fps : 60, name : "FireEmblem", orientation : "", packageName : "com.example.myapp", version : "0.0.0", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 600, parameters : "{}", resizable : false, stencilBuffer : true, title : "FireEmblem", vsync : true, width : 800, x : null, y : null}]};
+	ApplicationMain.config = { build : "450", company : "HaxeFlixel", file : "FireEmblem", fps : 60, name : "FireEmblem", orientation : "", packageName : "com.example.myapp", version : "0.0.0", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 576, parameters : "{}", resizable : false, stencilBuffer : true, title : "FireEmblem", vsync : true, width : 800, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -2205,164 +2209,190 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this13.h["assets/data/tilesets/outdoors.json"] = value6;
 	}
-	var _this14 = this.className;
-	var value7 = _$_$ASSET_$_$assets_$fonts_$candelabook_$otf;
-	if(__map_reserved["assets/fonts/CandelaBook.otf"] != null) {
-		_this14.setReserved("assets/fonts/CandelaBook.otf",value7);
+	var _this14 = this.path;
+	if(__map_reserved["assets/fonts/CandelaBook.eot"] != null) {
+		_this14.setReserved("assets/fonts/CandelaBook.eot","assets/fonts/CandelaBook.eot");
 	} else {
-		_this14.h["assets/fonts/CandelaBook.otf"] = value7;
+		_this14.h["assets/fonts/CandelaBook.eot"] = "assets/fonts/CandelaBook.eot";
 	}
 	var _this15 = this.type;
-	var value8 = "FONT";
-	if(__map_reserved["assets/fonts/CandelaBook.otf"] != null) {
-		_this15.setReserved("assets/fonts/CandelaBook.otf",value8);
+	var value7 = "BINARY";
+	if(__map_reserved["assets/fonts/CandelaBook.eot"] != null) {
+		_this15.setReserved("assets/fonts/CandelaBook.eot",value7);
 	} else {
-		_this15.h["assets/fonts/CandelaBook.otf"] = value8;
+		_this15.h["assets/fonts/CandelaBook.eot"] = value7;
 	}
-	var _this16 = this.path;
-	if(__map_reserved["assets/images/display/cursor.png"] != null) {
-		_this16.setReserved("assets/images/display/cursor.png","assets/images/display/cursor.png");
+	var _this16 = this.className;
+	var value8 = _$_$ASSET_$_$assets_$fonts_$candelabook_$otf;
+	if(__map_reserved["assets/fonts/CandelaBook.otf"] != null) {
+		_this16.setReserved("assets/fonts/CandelaBook.otf",value8);
 	} else {
-		_this16.h["assets/images/display/cursor.png"] = "assets/images/display/cursor.png";
+		_this16.h["assets/fonts/CandelaBook.otf"] = value8;
 	}
 	var _this17 = this.type;
-	var value9 = "IMAGE";
-	if(__map_reserved["assets/images/display/cursor.png"] != null) {
-		_this17.setReserved("assets/images/display/cursor.png",value9);
+	var value9 = "FONT";
+	if(__map_reserved["assets/fonts/CandelaBook.otf"] != null) {
+		_this17.setReserved("assets/fonts/CandelaBook.otf",value9);
 	} else {
-		_this17.h["assets/images/display/cursor.png"] = value9;
+		_this17.h["assets/fonts/CandelaBook.otf"] = value9;
 	}
 	var _this18 = this.path;
-	if(__map_reserved["assets/images/display/tileinfo.png"] != null) {
-		_this18.setReserved("assets/images/display/tileinfo.png","assets/images/display/tileinfo.png");
+	if(__map_reserved["assets/fonts/CandelaBook.woff"] != null) {
+		_this18.setReserved("assets/fonts/CandelaBook.woff","assets/fonts/CandelaBook.woff");
 	} else {
-		_this18.h["assets/images/display/tileinfo.png"] = "assets/images/display/tileinfo.png";
+		_this18.h["assets/fonts/CandelaBook.woff"] = "assets/fonts/CandelaBook.woff";
 	}
 	var _this19 = this.type;
-	var value10 = "IMAGE";
-	if(__map_reserved["assets/images/display/tileinfo.png"] != null) {
-		_this19.setReserved("assets/images/display/tileinfo.png",value10);
+	var value10 = "BINARY";
+	if(__map_reserved["assets/fonts/CandelaBook.woff"] != null) {
+		_this19.setReserved("assets/fonts/CandelaBook.woff",value10);
 	} else {
-		_this19.h["assets/images/display/tileinfo.png"] = value10;
+		_this19.h["assets/fonts/CandelaBook.woff"] = value10;
 	}
 	var _this20 = this.path;
-	if(__map_reserved["assets/images/tilesheets/dev.png"] != null) {
-		_this20.setReserved("assets/images/tilesheets/dev.png","assets/images/tilesheets/dev.png");
+	if(__map_reserved["assets/images/display/cursor.png"] != null) {
+		_this20.setReserved("assets/images/display/cursor.png","assets/images/display/cursor.png");
 	} else {
-		_this20.h["assets/images/tilesheets/dev.png"] = "assets/images/tilesheets/dev.png";
+		_this20.h["assets/images/display/cursor.png"] = "assets/images/display/cursor.png";
 	}
 	var _this21 = this.type;
 	var value11 = "IMAGE";
-	if(__map_reserved["assets/images/tilesheets/dev.png"] != null) {
-		_this21.setReserved("assets/images/tilesheets/dev.png",value11);
+	if(__map_reserved["assets/images/display/cursor.png"] != null) {
+		_this21.setReserved("assets/images/display/cursor.png",value11);
 	} else {
-		_this21.h["assets/images/tilesheets/dev.png"] = value11;
+		_this21.h["assets/images/display/cursor.png"] = value11;
 	}
 	var _this22 = this.path;
-	if(__map_reserved["assets/images/tilesheets/midoria.png"] != null) {
-		_this22.setReserved("assets/images/tilesheets/midoria.png","assets/images/tilesheets/midoria.png");
+	if(__map_reserved["assets/images/display/tileinfo.png"] != null) {
+		_this22.setReserved("assets/images/display/tileinfo.png","assets/images/display/tileinfo.png");
 	} else {
-		_this22.h["assets/images/tilesheets/midoria.png"] = "assets/images/tilesheets/midoria.png";
+		_this22.h["assets/images/display/tileinfo.png"] = "assets/images/display/tileinfo.png";
 	}
 	var _this23 = this.type;
 	var value12 = "IMAGE";
-	if(__map_reserved["assets/images/tilesheets/midoria.png"] != null) {
-		_this23.setReserved("assets/images/tilesheets/midoria.png",value12);
+	if(__map_reserved["assets/images/display/tileinfo.png"] != null) {
+		_this23.setReserved("assets/images/display/tileinfo.png",value12);
 	} else {
-		_this23.h["assets/images/tilesheets/midoria.png"] = value12;
+		_this23.h["assets/images/display/tileinfo.png"] = value12;
 	}
 	var _this24 = this.path;
-	if(__map_reserved["assets/music/music-goes-here.txt"] != null) {
-		_this24.setReserved("assets/music/music-goes-here.txt","assets/music/music-goes-here.txt");
+	if(__map_reserved["assets/images/tilesheets/dev.png"] != null) {
+		_this24.setReserved("assets/images/tilesheets/dev.png","assets/images/tilesheets/dev.png");
 	} else {
-		_this24.h["assets/music/music-goes-here.txt"] = "assets/music/music-goes-here.txt";
+		_this24.h["assets/images/tilesheets/dev.png"] = "assets/images/tilesheets/dev.png";
 	}
 	var _this25 = this.type;
-	var value13 = "TEXT";
-	if(__map_reserved["assets/music/music-goes-here.txt"] != null) {
-		_this25.setReserved("assets/music/music-goes-here.txt",value13);
+	var value13 = "IMAGE";
+	if(__map_reserved["assets/images/tilesheets/dev.png"] != null) {
+		_this25.setReserved("assets/images/tilesheets/dev.png",value13);
 	} else {
-		_this25.h["assets/music/music-goes-here.txt"] = value13;
+		_this25.h["assets/images/tilesheets/dev.png"] = value13;
 	}
 	var _this26 = this.path;
-	if(__map_reserved["assets/sounds/sounds-go-here.txt"] != null) {
-		_this26.setReserved("assets/sounds/sounds-go-here.txt","assets/sounds/sounds-go-here.txt");
+	if(__map_reserved["assets/images/tilesheets/midoria.png"] != null) {
+		_this26.setReserved("assets/images/tilesheets/midoria.png","assets/images/tilesheets/midoria.png");
 	} else {
-		_this26.h["assets/sounds/sounds-go-here.txt"] = "assets/sounds/sounds-go-here.txt";
+		_this26.h["assets/images/tilesheets/midoria.png"] = "assets/images/tilesheets/midoria.png";
 	}
 	var _this27 = this.type;
-	var value14 = "TEXT";
-	if(__map_reserved["assets/sounds/sounds-go-here.txt"] != null) {
-		_this27.setReserved("assets/sounds/sounds-go-here.txt",value14);
+	var value14 = "IMAGE";
+	if(__map_reserved["assets/images/tilesheets/midoria.png"] != null) {
+		_this27.setReserved("assets/images/tilesheets/midoria.png",value14);
 	} else {
-		_this27.h["assets/sounds/sounds-go-here.txt"] = value14;
+		_this27.h["assets/images/tilesheets/midoria.png"] = value14;
 	}
 	var _this28 = this.path;
-	if(__map_reserved["flixel/sounds/beep.ogg"] != null) {
-		_this28.setReserved("flixel/sounds/beep.ogg","flixel/sounds/beep.ogg");
+	if(__map_reserved["assets/music/music-goes-here.txt"] != null) {
+		_this28.setReserved("assets/music/music-goes-here.txt","assets/music/music-goes-here.txt");
 	} else {
-		_this28.h["flixel/sounds/beep.ogg"] = "flixel/sounds/beep.ogg";
+		_this28.h["assets/music/music-goes-here.txt"] = "assets/music/music-goes-here.txt";
 	}
 	var _this29 = this.type;
-	var value15 = "SOUND";
-	if(__map_reserved["flixel/sounds/beep.ogg"] != null) {
-		_this29.setReserved("flixel/sounds/beep.ogg",value15);
+	var value15 = "TEXT";
+	if(__map_reserved["assets/music/music-goes-here.txt"] != null) {
+		_this29.setReserved("assets/music/music-goes-here.txt",value15);
 	} else {
-		_this29.h["flixel/sounds/beep.ogg"] = value15;
+		_this29.h["assets/music/music-goes-here.txt"] = value15;
 	}
 	var _this30 = this.path;
-	if(__map_reserved["flixel/sounds/flixel.ogg"] != null) {
-		_this30.setReserved("flixel/sounds/flixel.ogg","flixel/sounds/flixel.ogg");
+	if(__map_reserved["assets/sounds/sounds-go-here.txt"] != null) {
+		_this30.setReserved("assets/sounds/sounds-go-here.txt","assets/sounds/sounds-go-here.txt");
 	} else {
-		_this30.h["flixel/sounds/flixel.ogg"] = "flixel/sounds/flixel.ogg";
+		_this30.h["assets/sounds/sounds-go-here.txt"] = "assets/sounds/sounds-go-here.txt";
 	}
 	var _this31 = this.type;
-	var value16 = "SOUND";
-	if(__map_reserved["flixel/sounds/flixel.ogg"] != null) {
-		_this31.setReserved("flixel/sounds/flixel.ogg",value16);
+	var value16 = "TEXT";
+	if(__map_reserved["assets/sounds/sounds-go-here.txt"] != null) {
+		_this31.setReserved("assets/sounds/sounds-go-here.txt",value16);
 	} else {
-		_this31.h["flixel/sounds/flixel.ogg"] = value16;
+		_this31.h["assets/sounds/sounds-go-here.txt"] = value16;
 	}
-	var _this32 = this.className;
-	var value17 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
-	if(__map_reserved["flixel/fonts/nokiafc22.ttf"] != null) {
-		_this32.setReserved("flixel/fonts/nokiafc22.ttf",value17);
+	var _this32 = this.path;
+	if(__map_reserved["flixel/sounds/beep.ogg"] != null) {
+		_this32.setReserved("flixel/sounds/beep.ogg","flixel/sounds/beep.ogg");
 	} else {
-		_this32.h["flixel/fonts/nokiafc22.ttf"] = value17;
+		_this32.h["flixel/sounds/beep.ogg"] = "flixel/sounds/beep.ogg";
 	}
 	var _this33 = this.type;
-	var value18 = "FONT";
-	if(__map_reserved["flixel/fonts/nokiafc22.ttf"] != null) {
-		_this33.setReserved("flixel/fonts/nokiafc22.ttf",value18);
+	var value17 = "SOUND";
+	if(__map_reserved["flixel/sounds/beep.ogg"] != null) {
+		_this33.setReserved("flixel/sounds/beep.ogg",value17);
 	} else {
-		_this33.h["flixel/fonts/nokiafc22.ttf"] = value18;
+		_this33.h["flixel/sounds/beep.ogg"] = value17;
 	}
-	var _this34 = this.className;
-	var value19 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
-	if(__map_reserved["flixel/fonts/monsterrat.ttf"] != null) {
-		_this34.setReserved("flixel/fonts/monsterrat.ttf",value19);
+	var _this34 = this.path;
+	if(__map_reserved["flixel/sounds/flixel.ogg"] != null) {
+		_this34.setReserved("flixel/sounds/flixel.ogg","flixel/sounds/flixel.ogg");
 	} else {
-		_this34.h["flixel/fonts/monsterrat.ttf"] = value19;
+		_this34.h["flixel/sounds/flixel.ogg"] = "flixel/sounds/flixel.ogg";
 	}
 	var _this35 = this.type;
-	var value20 = "FONT";
-	if(__map_reserved["flixel/fonts/monsterrat.ttf"] != null) {
-		_this35.setReserved("flixel/fonts/monsterrat.ttf",value20);
+	var value18 = "SOUND";
+	if(__map_reserved["flixel/sounds/flixel.ogg"] != null) {
+		_this35.setReserved("flixel/sounds/flixel.ogg",value18);
 	} else {
-		_this35.h["flixel/fonts/monsterrat.ttf"] = value20;
+		_this35.h["flixel/sounds/flixel.ogg"] = value18;
 	}
-	var _this36 = this.path;
-	if(__map_reserved["flixel/images/ui/button.png"] != null) {
-		_this36.setReserved("flixel/images/ui/button.png","flixel/images/ui/button.png");
+	var _this36 = this.className;
+	var value19 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
+	if(__map_reserved["flixel/fonts/nokiafc22.ttf"] != null) {
+		_this36.setReserved("flixel/fonts/nokiafc22.ttf",value19);
 	} else {
-		_this36.h["flixel/images/ui/button.png"] = "flixel/images/ui/button.png";
+		_this36.h["flixel/fonts/nokiafc22.ttf"] = value19;
 	}
 	var _this37 = this.type;
-	var value21 = "IMAGE";
-	if(__map_reserved["flixel/images/ui/button.png"] != null) {
-		_this37.setReserved("flixel/images/ui/button.png",value21);
+	var value20 = "FONT";
+	if(__map_reserved["flixel/fonts/nokiafc22.ttf"] != null) {
+		_this37.setReserved("flixel/fonts/nokiafc22.ttf",value20);
 	} else {
-		_this37.h["flixel/images/ui/button.png"] = value21;
+		_this37.h["flixel/fonts/nokiafc22.ttf"] = value20;
+	}
+	var _this38 = this.className;
+	var value21 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
+	if(__map_reserved["flixel/fonts/monsterrat.ttf"] != null) {
+		_this38.setReserved("flixel/fonts/monsterrat.ttf",value21);
+	} else {
+		_this38.h["flixel/fonts/monsterrat.ttf"] = value21;
+	}
+	var _this39 = this.type;
+	var value22 = "FONT";
+	if(__map_reserved["flixel/fonts/monsterrat.ttf"] != null) {
+		_this39.setReserved("flixel/fonts/monsterrat.ttf",value22);
+	} else {
+		_this39.h["flixel/fonts/monsterrat.ttf"] = value22;
+	}
+	var _this40 = this.path;
+	if(__map_reserved["flixel/images/ui/button.png"] != null) {
+		_this40.setReserved("flixel/images/ui/button.png","flixel/images/ui/button.png");
+	} else {
+		_this40.h["flixel/images/ui/button.png"] = "flixel/images/ui/button.png";
+	}
+	var _this41 = this.type;
+	var value23 = "IMAGE";
+	if(__map_reserved["flixel/images/ui/button.png"] != null) {
+		_this41.setReserved("flixel/images/ui/button.png",value23);
+	} else {
+		_this41.h["flixel/images/ui/button.png"] = value23;
 	}
 	var assetsPrefix = null;
 	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"assetsPrefix")) {
@@ -2372,13 +2402,13 @@ var DefaultAssetLibrary = function() {
 		var tmp = this.path.keys();
 		while(tmp.hasNext()) {
 			var k = tmp.next();
-			var _this38 = this.path;
-			var value22 = assetsPrefix + (__map_reserved[k] != null?_this38.getReserved(k):_this38.h[k]);
-			var _this39 = this.path;
+			var _this42 = this.path;
+			var value24 = assetsPrefix + (__map_reserved[k] != null?_this42.getReserved(k):_this42.h[k]);
+			var _this43 = this.path;
 			if(__map_reserved[k] != null) {
-				_this39.setReserved(k,value22);
+				_this43.setReserved(k,value24);
 			} else {
-				_this39.h[k] = value22;
+				_this43.h[k] = value24;
 			}
 		}
 	}
@@ -2896,7 +2926,7 @@ NMEPreloader.prototype = $extend(openfl_display_Sprite.prototype,{
 		return 0;
 	}
 	,getHeight: function() {
-		return 600;
+		return 576;
 	}
 	,getWidth: function() {
 		return 800;
@@ -4141,7 +4171,8 @@ com_auroratide_fireemblem_PlayState.prototype = $extend(flixel_FlxState.prototyp
 	create: function() {
 		flixel_FlxState.prototype.create.call(this);
 		var keyboard = new com_auroratide_fireemblem_input_Keyboard(flixel_FlxG.keys,new com_auroratide_fireemblem_config_Keybinds());
-		var map = new com_auroratide_fireemblem_loader_MapLoader(6,new com_auroratide_fireemblem_loader_TilesetLoader(""),new com_auroratide_fireemblem_loader_TilesheetLoader("")).load();
+		var map = new com_auroratide_fireemblem_loader_MapLoader(4,new com_auroratide_fireemblem_loader_TilesetLoader(""),new com_auroratide_fireemblem_loader_TilesheetLoader("")).load();
+		var mapBorder = com_auroratide_fireemblem_map_MapBorder.create(2,-2013261568,map);
 		var cursor = new com_auroratide_fireemblem_map_MapCursor(map);
 		var camera = new com_auroratide_fireemblem_map_MapCamera(map,cursor);
 		flixel_FlxG.cameras.add(camera);
@@ -4151,6 +4182,7 @@ com_auroratide_fireemblem_PlayState.prototype = $extend(flixel_FlxState.prototyp
 		var cursorMovement = new com_auroratide_fireemblem_control_MapCursorControl(keyboard,cursor);
 		var mouseToggle = new com_auroratide_fireemblem_control_MouseToggleControl(keyboard,flixel_FlxG.mouse,[mouseMovement]);
 		this.add(map);
+		this.add(mapBorder);
 		this.add(cursor);
 		this.add(hud);
 		this.add(mouseMovement);
@@ -7342,7 +7374,7 @@ com_auroratide_fireemblem_loader_MapLoader.prototype = $extend(com_auroratide_fi
 			var i = _g1++;
 			tiles.push(tileset.get(mapData.tiles[i],mapData.idles[i],tilesheet));
 		}
-		return com_auroratide_fireemblem_map_FeMap.create(mapData.rows,mapData.cols,tiles);
+		return com_auroratide_fireemblem_map_FeMap.create(mapData.rows,mapData.cols,mapData.rowPadding,mapData.colPadding,tiles);
 	}
 	,validateDimensions: function(data) {
 		var numTiles = data.rows * data.cols;
@@ -7423,15 +7455,23 @@ com_auroratide_fireemblem_loader_TilesheetLoader.prototype = {
 	}
 	,__class__: com_auroratide_fireemblem_loader_TilesheetLoader
 };
-var com_auroratide_fireemblem_map_FeMap = function(rows,cols) {
+var com_auroratide_fireemblem_map_FeMap = function(rows,cols,rowPadding,colPadding) {
+	if(colPadding == null) {
+		colPadding = 0;
+	}
+	if(rowPadding == null) {
+		rowPadding = 0;
+	}
 	flixel_group_FlxTypedGroup.call(this);
 	this.rows = rows;
 	this.cols = cols;
+	this.rowPadding = rowPadding;
+	this.colPadding = colPadding;
 };
 $hxClasses["com.auroratide.fireemblem.map.FeMap"] = com_auroratide_fireemblem_map_FeMap;
 com_auroratide_fireemblem_map_FeMap.__name__ = ["com","auroratide","fireemblem","map","FeMap"];
-com_auroratide_fireemblem_map_FeMap.create = function(rows,cols,tiles) {
-	var map = new com_auroratide_fireemblem_map_FeMap(rows,cols);
+com_auroratide_fireemblem_map_FeMap.create = function(rows,cols,rowPadding,colPadding,tiles) {
+	var map = new com_auroratide_fireemblem_map_FeMap(rows,cols,rowPadding,colPadding);
 	var i = 0;
 	var tmp = $iterator(tiles)();
 	while(tmp.hasNext()) {
@@ -7441,6 +7481,13 @@ com_auroratide_fireemblem_map_FeMap.create = function(rows,cols,tiles) {
 		map.add(tile);
 		++i;
 	}
+	var _this = flixel_math_FlxRect._pool.get();
+	_this.x = colPadding * 32;
+	_this.y = rowPadding * 32;
+	_this.width = (cols - 2 * colPadding) * 32;
+	_this.height = (rows - 2 * rowPadding) * 32;
+	_this._inPool = false;
+	map.bounds = _this;
 	return map;
 };
 com_auroratide_fireemblem_map_FeMap.__super__ = flixel_group_FlxTypedGroup;
@@ -7488,12 +7535,44 @@ com_auroratide_fireemblem_map_FeTileset.prototype = {
 	get: function(tileIndex,idle,tilesheet) {
 		var tile = com_auroratide_fireemblem_map_FeTile.create(this.names[tileIndex]);
 		tile.loadGraphic(tilesheet,true,32,32);
-		tile.animation.add("idle",this.idles[tileIndex][idle],30,this.idles[tileIndex][idle].length > 1);
+		tile.animation.add("idle",this.idles[tileIndex][idle],2,this.idles[tileIndex][idle].length > 1);
 		tile.animation.play("idle");
 		return tile;
 	}
 	,__class__: com_auroratide_fireemblem_map_FeTileset
 };
+var com_auroratide_fireemblem_map_MapBorder = function() {
+	flixel_group_FlxTypedGroup.call(this);
+};
+$hxClasses["com.auroratide.fireemblem.map.MapBorder"] = com_auroratide_fireemblem_map_MapBorder;
+com_auroratide_fireemblem_map_MapBorder.__name__ = ["com","auroratide","fireemblem","map","MapBorder"];
+com_auroratide_fireemblem_map_MapBorder.create = function(thickness,color,map) {
+	var top = new flixel_FlxSprite();
+	top.setPosition(map.bounds.x - thickness,map.bounds.y - thickness);
+	top.makeGraphic((map.bounds.width | 0) + thickness,thickness,color);
+	var right = new flixel_FlxSprite();
+	var _this = map.bounds;
+	right.setPosition(_this.x + _this.width,map.bounds.y - thickness);
+	right.makeGraphic(thickness,(map.bounds.height | 0) + thickness,color);
+	var bottom = new flixel_FlxSprite();
+	var tmp = map.bounds.x - thickness;
+	var _this1 = map.bounds;
+	bottom.setPosition(tmp,_this1.y + _this1.height);
+	bottom.makeGraphic((map.bounds.width | 0) + 2 * thickness,thickness,color);
+	var left = new flixel_FlxSprite();
+	left.setPosition(map.bounds.x - thickness,map.bounds.y - thickness);
+	left.makeGraphic(thickness,(map.bounds.height | 0) + thickness,color);
+	var border = new com_auroratide_fireemblem_map_MapBorder();
+	border.add(top);
+	border.add(right);
+	border.add(bottom);
+	border.add(left);
+	return border;
+};
+com_auroratide_fireemblem_map_MapBorder.__super__ = flixel_group_FlxTypedGroup;
+com_auroratide_fireemblem_map_MapBorder.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
+	__class__: com_auroratide_fireemblem_map_MapBorder
+});
 var openfl_VectorData = function() {
 	this.length = 0;
 };
@@ -9510,7 +9589,7 @@ com_auroratide_fireemblem_map_MapCamera.prototype = $extend(flixel_FlxCamera.pro
 		_this.height = maxDim;
 		_this._inPool = false;
 		this.deadzone = _this;
-		this.setScrollBoundsRect(0,0,this.map.cols * 32,this.map.rows * 32);
+		this.setScrollBoundsRect(0,0,Math.max(this.map.cols * 32,this.width),Math.max(this.map.rows * 32,this.height));
 	}
 	,__class__: com_auroratide_fireemblem_map_MapCamera
 });
@@ -9531,34 +9610,42 @@ com_auroratide_fireemblem_map_MapCursor.prototype = $extend(flixel_FlxSprite.pro
 			x = 0;
 		}
 		var Value = Math.floor(x / 32) * 32;
-		var Max = (this.map.cols - 1) * 32;
-		var lowerBound = Value < 0?0:Value;
+		var Min = this.map.bounds.x;
+		var _this = this.map.bounds;
+		var Max = _this.x + _this.width - 32;
+		var lowerBound = Min != null && Value < Min?Min:Value;
 		this.set_x(Max != null && lowerBound > Max?Max:lowerBound);
 		var Value1 = Math.floor(y / 32) * 32;
-		var Max1 = (this.map.rows - 1) * 32;
-		var lowerBound1 = Value1 < 0?0:Value1;
+		var Min1 = this.map.bounds.y;
+		var _this1 = this.map.bounds;
+		var Max1 = _this1.y + _this1.height - 32;
+		var lowerBound1 = Min1 != null && Value1 < Min1?Min1:Value1;
 		this.set_y(Max1 != null && lowerBound1 > Max1?Max1:lowerBound1);
 	}
 	,up: function() {
-		if(this.get_row() > 0) {
+		if(this.y > this.map.bounds.y) {
 			var _g = this;
 			_g.set_y(_g.y - 32);
 		}
 	}
 	,right: function() {
-		if(this.get_col() < this.map.cols - 1) {
+		var tmp = this.x;
+		var _this = this.map.bounds;
+		if(tmp < _this.x + _this.width - 32) {
 			var _g = this;
 			_g.set_x(_g.x + 32);
 		}
 	}
 	,down: function() {
-		if(this.get_row() < this.map.rows - 1) {
+		var tmp = this.y;
+		var _this = this.map.bounds;
+		if(tmp < _this.y + _this.height - 32) {
 			var _g = this;
 			_g.set_y(_g.y + 32);
 		}
 	}
 	,left: function() {
-		if(this.get_col() > 0) {
+		if(this.x > this.map.bounds.x) {
 			var _g = this;
 			_g.set_x(_g.x - 32);
 		}
@@ -72100,8 +72187,8 @@ com_auroratide_fireemblem_Constants.TILE_PIXEL_HEIGHT = 32;
 com_auroratide_fireemblem_Constants.CURSOR_PIXEL_WIDTH = 64;
 com_auroratide_fireemblem_Constants.CURSOR_PIXEL_HEIGHT = 64;
 com_auroratide_fireemblem_Constants.MAP_HUD_PADDING = 20;
+com_auroratide_fireemblem_Constants.TILE_IDLE_FRAMERATE = 2;
 com_auroratide_fireemblem_Constants.CAMERA_SENSITIVITY = 0.15;
-com_auroratide_fireemblem_Constants.ANIMATION_FRAMERATE = 30;
 com_auroratide_fireemblem_Paths.CHAPTER = "assets/data/chapters/";
 com_auroratide_fireemblem_Paths.TILESET = "assets/data/tilesets/";
 com_auroratide_fireemblem_Paths.TILESHEET = "assets/images/tilesheets/";

@@ -1,6 +1,8 @@
 {
   "cols": 42,
   "rows": 30,
+  "rowPadding": 0,
+  "colPadding": 0,
   "tileset": "outdoors",
   "tilesheet": "midoria",
   "tiles": [9, 9, 9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 9, 9, 1, 1, 1, 1, 1, 1, 1,
