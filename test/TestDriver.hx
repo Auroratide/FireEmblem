@@ -1,5 +1,6 @@
 package;
 
+import com.auroratide.fireemblem.control.MapCursorControlTest;
 import com.auroratide.fireemblem.map.FeTilesetTest;
 import haxe.unit.TestCase;
 import haxe.unit.TestRunner;
@@ -11,7 +12,10 @@ class TestDriver {
 
     public static function main():Void {
         var driver = new TestDriver();
-        driver.all();
+//        driver.all();
+
+        driver.one("com.auroratide.fireemblem.control.MapCursorControlTest");
+
         driver.run();
     }
 
@@ -21,6 +25,8 @@ class TestDriver {
     public function new() {
         runner = new TestRunner();
         tests = new Map<String, TestCase>();
+
+        register(new MapCursorControlTest());
 
         register(new FeMapTest());
         register(new FeTilesetTest());

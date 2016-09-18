@@ -1,5 +1,6 @@
 package;
 
+import haxe.PosInfos;
 import haxe.unit.TestCase;
 
 class Test extends TestCase {
@@ -15,4 +16,20 @@ class Test extends TestCase {
         assertTrue(true);
     }
 
+    function verify(mock:MockedObject, method:String, ?params:Array<Dynamic>, times = 1, ?c:PosInfos):Void {
+        if(params == null)
+            params = [];
+        currentTest.done = true;
+        if (times != mock.verifier.get(method, params)){
+            currentTest.success = false;
+            currentTest.error   = 'expected $times invocations of $method but got ${mock.verifier.get(method, params)}';
+            currentTest.posInfos = c;
+            throw currentTest;
+        }
+    }
+
+}
+
+private typedef MockedObject = {
+    var verifier:MockVerifier;
 }
