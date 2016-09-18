@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem;
 
+import com.auroratide.fireemblem.map.MapBorder;
 import flixel.util.FlxColor;
 import flixel.FlxSprite;
 import com.auroratide.fireemblem.hud.Hud;
@@ -35,7 +36,7 @@ class PlayState extends FlxState {
         var keyboard = new Keyboard(FlxG.keys, keybinds);
 
         var map = new MapLoader(3, new TilesetLoader(""), new TilesheetLoader("")).load();
-        var mapBorder = map.createBorder(2, 0x88333333);
+        var mapBorder = MapBorder.create(2, 0x88000000, map);
 
         var cursor = new MapCursor(map);
 

@@ -53,30 +53,4 @@ class FeMap extends FlxTypedGroup<FeTile> {
         return members[col + cols * row];
     }
 
-    public function createBorder(thickness:Int, color:FlxColor):FlxGroup {
-        var top = new FlxSprite();
-        top.setPosition(bounds.left - thickness, bounds.top - thickness);
-        top.makeGraphic(Std.int(bounds.width), thickness, color);
-
-        var right = new FlxSprite();
-        right.setPosition(bounds.right, bounds.top - thickness);
-        right.makeGraphic(thickness, Std.int(bounds.height), color);
-
-        var bottom = new FlxSprite();
-        bottom.setPosition(bounds.left - thickness, bounds.bottom);
-        bottom.makeGraphic(Std.int(bounds.width), thickness, color);
-
-        var left = new FlxSprite();
-        left.setPosition(bounds.left - thickness, bounds.top - thickness);
-        left.makeGraphic(thickness, Std.int(bounds.height), color);
-
-        var border = new FlxGroup();
-        border.add(top);
-        border.add(right);
-        border.add(bottom);
-        border.add(left);
-
-        return border;
-    }
-
 }
