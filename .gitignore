@@ -4,3 +4,5 @@ export/
 *.hxproj
 .DS_Store
 release.sh
+test.sh
+debug.sh
