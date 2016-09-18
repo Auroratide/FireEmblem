@@ -35,8 +35,8 @@ class PlayState extends FlxState {
         var keybinds = new Keybinds();
         var keyboard = new Keyboard(FlxG.keys, keybinds);
 
-        var map = new MapLoader(3, new TilesetLoader(""), new TilesheetLoader("")).load();
-        var mapBorder = MapBorder.create(2, 0x88000000, map);
+        var map = new MapLoader(4, new TilesetLoader(""), new TilesheetLoader("")).load();
+        var mapBorder = MapBorder.create(2, 0x88001100, map);
 
         var cursor = new MapCursor(map);
 
