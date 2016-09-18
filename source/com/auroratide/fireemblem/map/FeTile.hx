@@ -3,7 +3,7 @@ package com.auroratide.fireemblem.map;
 import com.auroratide.fireemblem.error.NotFoundError;
 import flixel.FlxSprite;
 
-class FeTile extends FlxSprite {
+@:keepSub class FeTile extends FlxSprite {
     public function new() {
         super();
     }
