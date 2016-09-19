@@ -77,4 +77,13 @@ class MapCursorControlTest extends Test {
         verify(cursor, "up", Exactly(1));
     }
 
+    public function testShouldMoveManyTimesWhenInputIsHeldForALongTime() {
+        when(input.up, "pressed").always(true);
+
+        for(i in 0...100)
+            control.update(1);
+
+        verify(cursor, "up", AtLeast(2));
+    }
+
 }
