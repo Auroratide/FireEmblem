@@ -11,7 +11,7 @@ class MockVerifier {
         methods = new Map<String, Array<Array<Dynamic>>>();
     }
 
-    public function get(name:String, params:Array<Dynamic>, times = 1):Int {
+    public function get(name:String, params:Array<Dynamic>):Int {
         if(!methods.exists(name))
             return 0;
 

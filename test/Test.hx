@@ -16,11 +16,20 @@ class Test extends TestCase {
         assertTrue(true);
     }
 
-    function verify(mock:MockedObject, method:String, ?params:Array<Dynamic>, times = 1, ?c:PosInfos):Void {
+    function verify(mock:MockedObject, method:String, ?params:Array<Dynamic>, ?times:Times, ?c:PosInfos):Void {
         if(params == null)
             params = [];
+        if(times == null)
+            times = Exactly(1);
         currentTest.done = true;
-        if (times != mock.verifier.get(method, params)){
+
+        var timesInvoked = mock.verifier.get(method, params);
+        if (!switch(times) {
+            case Never: 0 == timesInvoked;
+            case Exactly(n): n == timesInvoked;
+            case AtLeast(n): n <= timesInvoked;
+            case AtMost(n): n >= timesInvoked;
+        }) {
             currentTest.success = false;
             currentTest.error   = 'expected $times invocations of $method but got ${mock.verifier.get(method, params)}';
             currentTest.posInfos = c;
