@@ -1,5 +1,6 @@
 package;
 
+import com.auroratide.fireemblem.control.MapCursorMouseControlTest;
 import com.auroratide.fireemblem.control.MapCursorControlTest;
 import com.auroratide.fireemblem.map.FeTilesetTest;
 import haxe.unit.TestCase;
@@ -15,6 +16,7 @@ class TestDriver {
 //        driver.all();
 
         driver.one("com.auroratide.fireemblem.control.MapCursorControlTest");
+        driver.one("com.auroratide.fireemblem.control.MapCursorMouseControlTest");
 
         driver.run();
     }
@@ -27,6 +29,7 @@ class TestDriver {
         tests = new Map<String, TestCase>();
 
         register(new MapCursorControlTest());
+        register(new MapCursorMouseControlTest());
 
         register(new FeMapTest());
         register(new FeTilesetTest());
