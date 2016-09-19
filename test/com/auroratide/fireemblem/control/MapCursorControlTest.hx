@@ -12,28 +12,74 @@ using mockatoo.Mockatoo;
 
 class MapCursorControlTest extends Test {
 
-    public function testUpdate() {
-        var input:GameInput = mockGameInput();
-        var cursor = new MockMapCursor();
+    private var input:MockGameInput;
+    private var cursor:MockMapCursor;
+    private var control:MapCursorControl;
 
-        cursor.setPosition(1, 1);
-        cursor.setPosition(1, 2);
+    override public function setup() {
+        input = new MockGameInput();
+        cursor = new MockMapCursor();
 
-        cursor.stubber.when("row").then(12);
-        trace(cursor.row);
-        trace(cursor.row);
-
-        verify(cursor, "up", 0);
-
-        //var control = new MapCursorControl(input, cursor);
+        control = new MapCursorControl(input, cursor);
     }
 
-    private function mockGameInput():GameInput {
-        return new MockGameInput(
-            mock(IFlxInput), mock(IFlxInput), mock(IFlxInput), mock(IFlxInput),
-            mock(IFlxInput), mock(IFlxInput), mock(IFlxInput),
-            mock(IFlxInput), mock(IFlxInput)
-        );
+    public function testShouldNotMoveWhenNoInputIsPressed() {
+        control.update(1);
+
+        verify(cursor, "up", 0);
+        verify(cursor, "right", 0);
+        verify(cursor, "down", 0);
+        verify(cursor, "left", 0);
+    }
+
+    public function testShouldMoveUpWhenUpIsPressed() {
+        when(input.up, "pressed").then(true);
+        control.update(1);
+
+        verify(cursor, "up");
+        verify(cursor, "right", 0);
+        verify(cursor, "down", 0);
+        verify(cursor, "left", 0);
+    }
+
+    public function testShouldMoveLeftWhenLeftIsPressed() {
+        when(input.left, "pressed").then(true);
+        control.update(1);
+
+        verify(cursor, "up", 0);
+        verify(cursor, "right", 0);
+        verify(cursor, "down", 0);
+        verify(cursor, "left");
+    }
+
+    public function testShouldMoveDownWhenDownIsPressed() {
+        when(input.down, "pressed").then(true);
+        control.update(1);
+
+        verify(cursor, "up", 0);
+        verify(cursor, "right", 0);
+        verify(cursor, "down");
+        verify(cursor, "left", 0);
+    }
+
+    public function testShouldMoveRightWhenRightIsPressed() {
+        when(input.right, "pressed").then(true);
+        control.update(1);
+
+        verify(cursor, "up", 0);
+        verify(cursor, "right");
+        verify(cursor, "down", 0);
+        verify(cursor, "left", 0);
+    }
+
+    public function testShouldOnlyMoveOnceWhenInputHeldForTwoFrames() {
+        when(input.up, "pressed").then(true).then(true);
+        when(input.directions, "pressed").then(true).then(true);
+
+        control.update(1);
+        control.update(1);
+
+        verify(cursor, "up", 1);
     }
 
 }

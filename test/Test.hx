@@ -28,8 +28,16 @@ class Test extends TestCase {
         }
     }
 
+    function when<T>(stub:StubbedObject, method:String):MethodStub<T> {
+        return stub.stubber.when(method);
+    }
+
 }
 
 private typedef MockedObject = {
     var verifier:MockVerifier;
+}
+
+private typedef StubbedObject = {
+    var stubber:MockStubber;
 }

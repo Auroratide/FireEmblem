@@ -36,26 +36,3 @@ class MockStubber {
     }
 
 }
-
-private class MethodStub<T> {
-
-    private var returns:Array<T>;
-    private var position:Int;
-
-    public function new() {
-        returns = new Array<T>();
-        position = 0;
-    }
-
-    public function then(value:T):MethodStub<T> {
-        returns.push(value);
-        return this;
-    }
-
-    public function next():T {
-        if(position >= returns.length)
-            return null;
-        return returns[position++];
-    }
-
-}

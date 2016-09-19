@@ -5,35 +5,39 @@ import com.auroratide.fireemblem.input.GameInput;
 
 class MockGameInput implements GameInput {
 
-    public var up(get, never):IFlxInput;
-    public var right(get, never):IFlxInput;
-    public var down(get, never):IFlxInput;
-    public var left(get, never):IFlxInput;
-    public var select(get, never):IFlxInput;
-    public var cancel(get, never):IFlxInput;
-    public var start(get, never):IFlxInput;
+    public var up(get, never):MockFlxInput;
+    public var right(get, never):MockFlxInput;
+    public var down(get, never):MockFlxInput;
+    public var left(get, never):MockFlxInput;
+    public var select(get, never):MockFlxInput;
+    public var cancel(get, never):MockFlxInput;
+    public var start(get, never):MockFlxInput;
 
-    public var directions(get, never):IFlxInput;
-    public var any(get, never):IFlxInput;
+    public var directions(get, never):MockFlxInput;
+    public var any(get, never):MockFlxInput;
 
-    public function new(up:IFlxInput, right:IFlxInput, down:IFlxInput, left:IFlxInput,
-                        select:IFlxInput, cancel:IFlxInput, start:IFlxInput,
-                        directions:IFlxInput, any:IFlxInput) {
-        up_ = up; right_ = right; down_ = down; left_ = left;
-        select_ = select; cancel_ = cancel; start_ = start;
-        directions_ = directions; any_ = any;
+    public function new() {
+        up_ = new MockFlxInput();
+        right_ = new MockFlxInput();
+        down_ = new MockFlxInput();
+        left_ = new MockFlxInput();
+        select_ = new MockFlxInput();
+        cancel_ = new MockFlxInput();
+        start_ = new MockFlxInput();
+        directions_ = new MockFlxInput();
+        any_ = new MockFlxInput();
     }
 
-    private var up_:IFlxInput;
-    private var right_:IFlxInput;
-    private var down_:IFlxInput;
-    private var left_:IFlxInput;
-    private var select_:IFlxInput;
-    private var cancel_:IFlxInput;
-    private var start_:IFlxInput;
+    private var up_:MockFlxInput;
+    private var right_:MockFlxInput;
+    private var down_:MockFlxInput;
+    private var left_:MockFlxInput;
+    private var select_:MockFlxInput;
+    private var cancel_:MockFlxInput;
+    private var start_:MockFlxInput;
 
-    private var directions_:IFlxInput;
-    private var any_:IFlxInput;
+    private var directions_:MockFlxInput;
+    private var any_:MockFlxInput;
 
     private function get_up()
         return up_;
@@ -53,5 +57,33 @@ class MockGameInput implements GameInput {
         return directions_;
     private function get_any()
         return any_;
+
+}
+
+private class MockFlxInput implements IFlxInput {
+
+    public var stubber:MockStubber;
+
+    public function new() {
+        stubber = new MockStubber();
+    }
+
+    public var justReleased(get, never):Bool;
+    public var released(get, never):Bool;
+    public var pressed(get, never):Bool;
+    public var justPressed(get, never):Bool;
+
+    public function get_justReleased() {
+        return stubber.nextBool("justReleased");
+    }
+    public function get_released() {
+        return stubber.nextBool("released");
+    }
+    public function get_pressed() {
+        return stubber.nextBool("pressed");
+    }
+    public function get_justPressed() {
+        return stubber.nextBool("justPressed");
+    }
 
 }

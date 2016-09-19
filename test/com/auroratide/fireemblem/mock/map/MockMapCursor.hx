@@ -13,6 +13,10 @@ class MockMapCursor extends MapCursor {
         stubber = new MockStubber();
     }
 
+    override public function update(elapsed:Float):Void {
+        verifier.set("update", [elapsed]);
+    }
+
     override public function setPosition(x = 0.0, y = 0.0):Void {
         verifier.set("setPosition", [x, y]);
     }
