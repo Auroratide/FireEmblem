@@ -1,5 +1,6 @@
 package;
 
+import com.auroratide.fireemblem.control.MouseToggleControlTest;
 import com.auroratide.fireemblem.control.MapCursorMouseControlTest;
 import com.auroratide.fireemblem.control.MapCursorControlTest;
 import com.auroratide.fireemblem.map.FeTilesetTest;
@@ -17,6 +18,7 @@ class TestDriver {
 
         driver.one("com.auroratide.fireemblem.control.MapCursorControlTest");
         driver.one("com.auroratide.fireemblem.control.MapCursorMouseControlTest");
+        driver.one("com.auroratide.fireemblem.control.MouseToggleControlTest");
 
         driver.run();
     }
@@ -30,6 +32,7 @@ class TestDriver {
 
         register(new MapCursorControlTest());
         register(new MapCursorMouseControlTest());
+        register(new MouseToggleControlTest());
 
         register(new FeMapTest());
         register(new FeTilesetTest());

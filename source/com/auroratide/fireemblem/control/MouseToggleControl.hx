@@ -2,18 +2,17 @@ package com.auroratide.fireemblem.control;
 
 import flixel.FlxBasic;
 import flixel.input.mouse.FlxMouse;
-import com.auroratide.fireemblem.input.Keyboard;
-import com.auroratide.fireemblem.config.Keybinds;
+import com.auroratide.fireemblem.input.GameInput;
 
 class MouseToggleControl extends FlxBasic {
 
-    private var keyboard:Keyboard;
+    private var input:GameInput;
     private var mouse:FlxMouse;
     private var mouseControls:Iterable<FlxBasic>;
 
-    public function new(keyboard:Keyboard, mouse:FlxMouse, mouseControls:Iterable<FlxBasic>) {
+    public function new(input:GameInput, mouse:FlxMouse, mouseControls:Iterable<FlxBasic>) {
         super();
-        this.keyboard = keyboard;
+        this.input = input;
         this.mouse = mouse;
         this.mouseControls = mouseControls;
     }
@@ -21,7 +20,7 @@ class MouseToggleControl extends FlxBasic {
     override public function update(elapsed:Float):Void {
         super.update(elapsed);
 
-        if(keyboard.any.justPressed)
+        if(input.any.justPressed)
             for(m in mouseControls) m.kill();
 
         if(mouse.justPressed)

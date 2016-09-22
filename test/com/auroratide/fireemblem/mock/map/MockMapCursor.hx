@@ -1,48 +1,47 @@
 package com.auroratide.fireemblem.mock.map;
 
+import com.auroratide.mockit.MockIt;
 import com.auroratide.fireemblem.map.MapCursor;
 
 class MockMapCursor extends MapCursor {
 
-    public var verifier:MockVerifier;
-    public var stubber:MockStubber;
+    public var mockit:MockIt;
 
     public function new() {
         super(null);
-        verifier = new MockVerifier();
-        stubber = new MockStubber();
+        mockit = new MockIt();
     }
 
     override public function update(elapsed:Float):Void {
-        verifier.set("update", [elapsed]);
+        mockit.call("update", [elapsed]);
     }
 
     override public function setPosition(x = 0.0, y = 0.0):Void {
-        verifier.set("setPosition", [x, y]);
+        mockit.call("setPosition", [x, y]);
     }
 
     override public function up():Void {
-        verifier.set("up", []);
+        mockit.call("up", []);
     }
 
     override public function right():Void {
-        verifier.set("right", []);
+        mockit.call("right", []);
     }
 
     override public function down():Void {
-        verifier.set("down", []);
+        mockit.call("down", []);
     }
 
     override public function left():Void {
-        verifier.set("left", []);
+        mockit.call("left", []);
     }
 
     override private function get_row():Int {
-        return stubber.nextInt("row");
+        return mockit.call("row", [], 0);
     }
 
     override private function get_col():Int {
-        return stubber.nextInt("col");
+        return mockit.call("col", [], 0);
     }
 
 }

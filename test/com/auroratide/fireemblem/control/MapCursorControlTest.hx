@@ -1,7 +1,6 @@
 package com.auroratide.fireemblem.control;
 
-import Times;
-
+import com.auroratide.mockit.MockItTestCase;
 import com.auroratide.fireemblem.mock.map.MockMapCursor;
 import com.auroratide.fireemblem.mock.input.MockGameInput;
 
@@ -21,10 +20,10 @@ class MapCursorControlTest extends Test {
     public function testShouldNotMoveWhenNoInputIsPressed() {
         control.update(1);
 
-        verify(cursor, "up", Never);
-        verify(cursor, "right", Never);
-        verify(cursor, "down", Never);
-        verify(cursor, "left", Never);
+        verify(cursor, "up", Zero);
+        verify(cursor, "right", Zero);
+        verify(cursor, "down", Zero);
+        verify(cursor, "left", Zero);
     }
 
     public function testShouldMoveUpWhenUpIsPressed() {
@@ -32,18 +31,18 @@ class MapCursorControlTest extends Test {
         control.update(1);
 
         verify(cursor, "up");
-        verify(cursor, "right", Never);
-        verify(cursor, "down", Never);
-        verify(cursor, "left", Never);
+        verify(cursor, "right", Zero);
+        verify(cursor, "down", Zero);
+        verify(cursor, "left", Zero);
     }
 
     public function testShouldMoveLeftWhenLeftIsPressed() {
         when(input.left, "pressed").then(true);
         control.update(1);
 
-        verify(cursor, "up", Never);
-        verify(cursor, "right", Never);
-        verify(cursor, "down", Never);
+        verify(cursor, "up", Zero);
+        verify(cursor, "right", Zero);
+        verify(cursor, "down", Zero);
         verify(cursor, "left");
     }
 
@@ -51,20 +50,20 @@ class MapCursorControlTest extends Test {
         when(input.down, "pressed").then(true);
         control.update(1);
 
-        verify(cursor, "up", Never);
-        verify(cursor, "right", Never);
+        verify(cursor, "up", Zero);
+        verify(cursor, "right", Zero);
         verify(cursor, "down");
-        verify(cursor, "left", Never);
+        verify(cursor, "left", Zero);
     }
 
     public function testShouldMoveRightWhenRightIsPressed() {
         when(input.right, "pressed").then(true);
         control.update(1);
 
-        verify(cursor, "up", Never);
+        verify(cursor, "up", Zero);
         verify(cursor, "right");
-        verify(cursor, "down", Never);
-        verify(cursor, "left", Never);
+        verify(cursor, "down", Zero);
+        verify(cursor, "left", Zero);
     }
 
     public function testShouldOnlyMoveOnceWhenInputHeldForTwoFrames() {
@@ -78,7 +77,7 @@ class MapCursorControlTest extends Test {
     }
 
     public function testShouldMoveManyTimesWhenInputIsHeldForALongTime() {
-        when(input.up, "pressed").always(true);
+        when(input.up, "pressed").then(true).always();
 
         for(i in 0...100)
             control.update(1);

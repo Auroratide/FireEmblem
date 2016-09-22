@@ -6,22 +6,25 @@ import flixel.math.FlxPoint;
 import flixel.FlxCamera;
 import flixel.input.mouse.FlxMouse;
 
+import com.auroratide.mockit.MockIt;
+
 class MockFlxMouse extends FlxMouse {
 
-    public var verifier:MockVerifier;
-    public var stubber:MockStubber;
+    public var mockit:MockIt;
 
     public function new() {
         super(new Sprite());
-        verifier = new MockVerifier();
-        stubber  = new MockStubber();
+        mockit = new MockIt();
     }
 
-    override public function getWorldPosition(?Camera:FlxCamera, ?point:FlxPoint):FlxPoint {
-        verifier.set("getWorldPosition", [Camera, point]);
-        var pt:FlxPoint = stubber.next("getWorldPosition");
+    override public function getWorldPosition(?camera:FlxCamera, ?point:FlxPoint):FlxPoint {
+        var pt:FlxPoint = mockit.call("getWorldPosition", [camera, point], new FlxPoint());
         point.set(pt.x, pt.y);
         return pt;
+    }
+
+    override private inline function get_justPressed():Bool {
+        return mockit.call("justPressed", [], false);
     }
 
 }

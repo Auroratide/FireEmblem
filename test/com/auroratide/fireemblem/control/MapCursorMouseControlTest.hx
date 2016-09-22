@@ -2,12 +2,10 @@ package com.auroratide.fireemblem.control;
 
 import flixel.math.FlxPoint;
 import flixel.FlxGame;
-import flixel.FlxG;
 import com.auroratide.fireemblem.mock.flixel.input.mouse.MockFlxMouse;
 import com.auroratide.fireemblem.mock.flixel.MockFlxCamera;
-import flixel.FlxCamera;
 import com.auroratide.fireemblem.mock.map.MockMapCursor;
-import flixel.input.mouse.FlxMouse;
+import com.auroratide.mockit.Arguments;
 
 class MapCursorMouseControlTest extends Test {
 
@@ -28,7 +26,7 @@ class MapCursorMouseControlTest extends Test {
     }
 
     public function testShouldUpdateCursorPosition() {
-        when(mouse, "getWorldPosition").then(FlxPoint.get(1, 2));
+        when(mouse, "getWorldPosition", [camera, Any]).then(FlxPoint.get(1, 2));
         control.update(1);
         verify(cursor, "setPosition", [1, 2]);
     }

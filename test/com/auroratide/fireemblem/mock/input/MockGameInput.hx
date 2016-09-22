@@ -1,6 +1,7 @@
 package com.auroratide.fireemblem.mock.input;
 
 import flixel.input.IFlxInput;
+import com.auroratide.mockit.MockIt;
 import com.auroratide.fireemblem.input.GameInput;
 
 class MockGameInput implements GameInput {
@@ -62,10 +63,10 @@ class MockGameInput implements GameInput {
 
 private class MockFlxInput implements IFlxInput {
 
-    public var stubber:MockStubber;
+    public var mockit:MockIt;
 
     public function new() {
-        stubber = new MockStubber();
+        mockit = new MockIt();
     }
 
     public var justReleased(get, never):Bool;
@@ -74,16 +75,16 @@ private class MockFlxInput implements IFlxInput {
     public var justPressed(get, never):Bool;
 
     public function get_justReleased() {
-        return stubber.nextBool("justReleased");
+        return mockit.call("justReleased", [], false);
     }
     public function get_released() {
-        return stubber.nextBool("released");
+        return mockit.call("release", [], false);
     }
     public function get_pressed() {
-        return stubber.nextBool("pressed");
+        return mockit.call("pressed", [], false);
     }
     public function get_justPressed() {
-        return stubber.nextBool("justPressed");
+        return mockit.call("justPressed", [], false);
     }
 
 }
