@@ -5,9 +5,8 @@ import haxe.unit.TestRunner;
 
 import com.auroratide.fireemblem.control.*;
 import com.auroratide.fireemblem.hud.*;
-import com.auroratide.fireemblem.map.FeTilesetTest;
-import com.auroratide.fireemblem.map.*;
 import com.auroratide.fireemblem.loader.*;
+import com.auroratide.fireemblem.map.*;
 
 class TestDriver {
 
@@ -17,10 +16,7 @@ class TestDriver {
 
         driver.some("com.auroratide.fireemblem.control");
         driver.some("com.auroratide.fireemblem.hud");
-
-        driver.one("com.auroratide.fireemblem.loader.MapLoaderTest");
-        driver.one("com.auroratide.fireemblem.loader.TilesetLoaderTest");
-
+        driver.some("com.auroratide.fireemblem.loader");
 
         driver.run();
     }
@@ -45,6 +41,7 @@ class TestDriver {
 
         register(new MapLoaderTest());
         register(new TilesetLoaderTest());
+        register(new TilesheetLoaderTest());
     }
 
     public function register(test:TestCase):Void {
