@@ -23,4 +23,67 @@ class HudElementTest extends Test {
         assertThat(element.y, Is(30));
     }
 
+    public function testAlignEast() {
+        element.align(East);
+
+        assertThat(element.x, Is(320));
+        assertThat(element.y, Is(230));
+    }
+
+    public function testAlignSouth() {
+        element.align(South);
+
+        assertThat(element.x, Is(170));
+        assertThat(element.y, Is(430));
+    }
+
+    public function testAlignWest() {
+        element.align(West);
+
+        assertThat(element.x, Is(20));
+        assertThat(element.y, Is(230));
+    }
+
+    public function testAlignNorthwest() {
+        element.align(Northwest);
+
+        assertThat(element.x, Is(20));
+        assertThat(element.y, Is(30));
+    }
+
+    public function testAlignNortheast() {
+        element.align(Northeast);
+
+        assertThat(element.x, Is(320));
+        assertThat(element.y, Is(30));
+    }
+
+    public function testAlignSoutheast() {
+        element.align(Southeast);
+
+        assertThat(element.x, Is(320));
+        assertThat(element.y, Is(430));
+    }
+
+    public function testAlignSouthwest() {
+        element.align(Southwest);
+
+        assertThat(element.x, Is(20));
+        assertThat(element.y, Is(430));
+    }
+
+    public function testAlignCenter() {
+        element.align(Center);
+
+        assertThat(element.x, Is(170));
+        assertThat(element.y, Is(230));
+    }
+
+    public function testAlignLocation() {
+        element.align(Location(47, 52));
+
+        assertThat(element.x, Is(47));
+        assertThat(element.y, Is(52));
+    }
+
 }
