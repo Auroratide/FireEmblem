@@ -18,6 +18,8 @@ class TestDriver {
         driver.some("com.auroratide.fireemblem.control");
         driver.some("com.auroratide.fireemblem.hud");
 
+        driver.one("com.auroratide.fireemblem.loader.MapLoaderTest");
+
         driver.run();
     }
 

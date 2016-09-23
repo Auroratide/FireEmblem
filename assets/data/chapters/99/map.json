@@ -1,6 +1,8 @@
 {
   "rows": 1,
   "cols": 1,
+  "rowPadding": 0,
+  "colPadding": 0,
   "tileset": "dev",
   "tilesheet": "dev",
   "tiles": [0],
