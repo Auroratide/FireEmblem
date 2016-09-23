@@ -1,5 +1,6 @@
 package com.auroratide.fireemblem.loader;
 
+import com.auroratide.mockit.Arguments;
 import com.auroratide.fireemblem.map.FeTilesheet;
 import com.auroratide.fireemblem.mock.map.MockFeTilesheet;
 import com.auroratide.fireemblem.mock.map.MockFeTileset;

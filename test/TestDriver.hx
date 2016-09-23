@@ -7,7 +7,7 @@ import com.auroratide.fireemblem.control.*;
 import com.auroratide.fireemblem.hud.*;
 import com.auroratide.fireemblem.map.FeTilesetTest;
 import com.auroratide.fireemblem.map.*;
-import com.auroratide.fireemblem.loader.MapLoaderTest;
+import com.auroratide.fireemblem.loader.*;
 
 class TestDriver {
 
@@ -19,6 +19,8 @@ class TestDriver {
         driver.some("com.auroratide.fireemblem.hud");
 
         driver.one("com.auroratide.fireemblem.loader.MapLoaderTest");
+        driver.one("com.auroratide.fireemblem.loader.TilesetLoaderTest");
+
 
         driver.run();
     }
@@ -42,6 +44,7 @@ class TestDriver {
         register(new MapCursorTest());
 
         register(new MapLoaderTest());
+        register(new TilesetLoaderTest());
     }
 
     public function register(test:TestCase):Void {
