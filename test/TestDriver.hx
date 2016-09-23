@@ -1,12 +1,11 @@
 package;
 
-import com.auroratide.fireemblem.control.MouseToggleControlTest;
-import com.auroratide.fireemblem.control.MapCursorMouseControlTest;
-import com.auroratide.fireemblem.control.MapCursorControlTest;
-import com.auroratide.fireemblem.map.FeTilesetTest;
 import haxe.unit.TestCase;
 import haxe.unit.TestRunner;
 
+import com.auroratide.fireemblem.control.*;
+import com.auroratide.fireemblem.hud.*;
+import com.auroratide.fireemblem.map.FeTilesetTest;
 import com.auroratide.fireemblem.map.*;
 import com.auroratide.fireemblem.loader.MapLoaderTest;
 
@@ -16,9 +15,8 @@ class TestDriver {
         var driver = new TestDriver();
 //        driver.all();
 
-        driver.one("com.auroratide.fireemblem.control.MapCursorControlTest");
-        driver.one("com.auroratide.fireemblem.control.MapCursorMouseControlTest");
-        driver.one("com.auroratide.fireemblem.control.MouseToggleControlTest");
+        driver.some("com.auroratide.fireemblem.control");
+        driver.some("com.auroratide.fireemblem.hud");
 
         driver.run();
     }
@@ -33,6 +31,9 @@ class TestDriver {
         register(new MapCursorControlTest());
         register(new MapCursorMouseControlTest());
         register(new MouseToggleControlTest());
+
+        register(new HudTest());
+        register(new HudElementTest());
 
         register(new FeMapTest());
         register(new FeTilesetTest());
