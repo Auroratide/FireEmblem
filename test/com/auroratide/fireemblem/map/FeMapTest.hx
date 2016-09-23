@@ -1,25 +1,36 @@
 package com.auroratide.fireemblem.map;
 
-import mockatoo.Mockatoo.*;
-using mockatoo.Mockatoo;
+import com.auroratide.mockit.Arguments;
 
 class FeMapTest extends Test {
 
-    public function testCreate() {
-        /*var tile01 = new FeTile();
-        var tile02 = new FeTile();
-        var tiles = new Array<FeTile>();
-        tiles.push(tile01);
-        tiles.push(tile02);
-        var map = FeMap.create(1, 2, tiles);
+    private var tile01:FeTile;
+    private var tile02:FeTile;
+    private var map:FeMap;
 
-        assertEquals(1, map.rows);
-        assertEquals(2, map.cols);
-        assertEquals(2, map.length);
-        assertEquals(tile01, map.members[0]);
-        assertEquals(tile02, map.members[1]);
-        assertEquals(0.0, tile01.x);
-        assertEquals(Constants.TILE_PIXEL_WIDTH * 1.0, tile02.x);*/
+    override public function setup():Void {
+        tile01 = new FeTile();
+        tile02 = new FeTile();
+        var tiles = [tile01, tile02];
+        map = FeMap.create(1, 2, 0, 0, tiles);
+    }
+
+    public function testCreate() {
+        assertThat(map.rows, Is(1));
+        assertThat(map.cols, Is(2));
+        assertThat(map.length, Is(2));
+        assertThat(map.members[0], Is(tile01));
+        assertThat(map.members[1], Is(tile02));
+        assertThat(tile01.x, Is(0));
+        assertThat(tile02.x, Is(Constants.TILE_PIXEL_WIDTH * 1.0));
+    }
+
+    public function testShouldGetCorrectTile() {
+        var tile = map.tile(0, 0);
+        assertThat(tile, Is(tile01));
+
+        tile = map.tile(0, 1);
+        assertThat(tile, Is(tile02));
     }
 
 }

@@ -17,6 +17,7 @@ class TestDriver {
         driver.some("com.auroratide.fireemblem.control");
         driver.some("com.auroratide.fireemblem.hud");
         driver.some("com.auroratide.fireemblem.loader");
+        driver.one("com.auroratide.fireemblem.map.FeMapTest");
 
         driver.run();
     }
