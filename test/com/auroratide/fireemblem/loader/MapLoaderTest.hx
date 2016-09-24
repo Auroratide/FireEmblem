@@ -8,7 +8,7 @@ import com.auroratide.fireemblem.mock.loader.MockAssetLoader;
 import com.auroratide.fireemblem.map.FeTile;
 import com.auroratide.fireemblem.map.FeTileset;
 
-class MapLoaderTest extends Test {
+@integration class MapLoaderTest extends Test {
 
     private var tilesetLoader:MockAssetLoader<FeTileset>;
     private var tilesheetLoader:MockAssetLoader<FeTilesheet>;

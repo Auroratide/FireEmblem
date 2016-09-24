@@ -3,7 +3,7 @@ package com.auroratide.fireemblem.hud;
 import com.auroratide.mockit.Arguments;
 import flixel.group.FlxSpriteGroup;
 
-class HudTest extends Test {
+@unit class HudTest extends Test {
 
     public function testShouldRemoveScrollFactorWhenAdding() {
         var hud = new Hud(0, 0, 0, 0);

@@ -3,7 +3,7 @@ package com.auroratide.fireemblem.hud;
 import flixel.FlxSprite;
 import com.auroratide.mockit.Arguments;
 
-class HudElementTest extends Test {
+@unit class HudElementTest extends Test {
 
     private var hud:Hud;
     private var element:HudElement;

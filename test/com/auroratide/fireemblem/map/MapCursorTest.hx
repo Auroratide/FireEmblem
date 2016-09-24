@@ -3,7 +3,7 @@ package com.auroratide.fireemblem.map;
 import mockatoo.Mockatoo.*;
 using mockatoo.Mockatoo;
 
-class MapCursorTest extends Test {
+@unit @ignore class MapCursorTest extends Test {
 
     private var map:FeMap;
 

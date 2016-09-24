@@ -7,7 +7,7 @@ import com.auroratide.fireemblem.mock.flixel.MockFlxCamera;
 import com.auroratide.fireemblem.mock.map.MockMapCursor;
 import com.auroratide.mockit.Arguments;
 
-class MapCursorMouseControlTest extends Test {
+@unit class MapCursorMouseControlTest extends Test {
 
     private var mouse:MockFlxMouse;
     private var cursor:MockMapCursor;

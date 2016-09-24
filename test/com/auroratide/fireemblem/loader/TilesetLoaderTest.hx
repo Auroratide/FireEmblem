@@ -3,7 +3,7 @@ package com.auroratide.fireemblem.loader;
 import com.auroratide.mockit.Arguments;
 import com.auroratide.fireemblem.mock.map.MockFeTilesheet;
 
-class TilesetLoaderTest extends Test {
+@integration class TilesetLoaderTest extends Test {
 
     public function testLoadDevSet() {
         var tilesheet = null;

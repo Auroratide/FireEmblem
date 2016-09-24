@@ -2,7 +2,7 @@ package com.auroratide.fireemblem.map;
 
 import com.auroratide.mockit.Arguments;
 
-class FeMapTest extends Test {
+@unit class FeMapTest extends Test {
 
     private var tile01:FeTile;
     private var tile02:FeTile;

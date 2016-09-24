@@ -4,7 +4,7 @@ import com.auroratide.fireemblem.mock.input.MockGameInput;
 import com.auroratide.fireemblem.mock.flixel.MockFlxBasic;
 import com.auroratide.fireemblem.mock.flixel.input.mouse.MockFlxMouse;
 
-class MouseToggleControlTest extends Test {
+@unit class MouseToggleControlTest extends Test {
 
     private var input:MockGameInput;
     private var mouse:MockFlxMouse;

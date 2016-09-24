@@ -3,7 +3,7 @@ package com.auroratide.fireemblem.map;
 import flixel.graphics.FlxGraphic;
 import openfl.Assets;
 
-class FeTilesetTest extends Test {
+@unit @ignore class FeTilesetTest extends Test {
 
     private var names:Array<String>;
     private var idles:Array<Array<Array<Int>>>;

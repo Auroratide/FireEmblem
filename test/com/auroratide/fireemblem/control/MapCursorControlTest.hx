@@ -4,7 +4,7 @@ import com.auroratide.mockit.MockItTestCase;
 import com.auroratide.fireemblem.mock.map.MockMapCursor;
 import com.auroratide.fireemblem.mock.input.MockGameInput;
 
-class MapCursorControlTest extends Test {
+@unit class MapCursorControlTest extends Test {
 
     private var input:MockGameInput;
     private var cursor:MockMapCursor;
