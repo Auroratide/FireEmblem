@@ -2,10 +2,6 @@ package com.auroratide.fireemblem.map;
 
 import flixel.graphics.FlxGraphic;
 import openfl.Assets;
-import flixel.graphics.frames.FlxFramesCollection.FlxFrameCollectionType;
-
-import mockatoo.Mockatoo.*;
-using mockatoo.Mockatoo;
 
 class FeTilesetTest extends Test {
 
@@ -15,7 +11,7 @@ class FeTilesetTest extends Test {
     private var tilesheet:FeTilesheet;
 
     override public function setup() {
-        names = ["forest", "mountain"];
+        names = ["Forest", "Mountain"];
         idles = [ [ [0], [1] ], [ [2] ] ];
 
         tileset = new FeTileset(names, idles);
